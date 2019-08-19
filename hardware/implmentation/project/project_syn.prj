@@ -1,0 +1,92 @@
+#--  Synopsys, Inc.
+#--  Version I-2013.09L-SP1 
+#--  Project file D:\MDN_Designs\Pedometer\Area_power_opt\22_5_14\LP3.5K_Pedometer_with_BLE_Interface\synthesis\project\project_syn.prj
+
+#project files
+add_file -fpga_constraint "../constraint/project_syn.fdc"
+
+
+
+add_file -verilog -lib work "../../source/context_awarness/squareroot.v" 
+add_file -verilog -lib work "../../source/context_awarness/multiplier.v" 
+add_file -verilog -lib work "../../source/context_awarness/context_calibration.v" 
+add_file -verilog -lib work "../../source/context_awarness/multiplier_seq.v" 
+add_file -verilog -lib work "../../source/i2c_master/I2C_master_top.v" 
+add_file -verilog -lib work "../../source/i2c_master/i2c_init.v" 
+add_file -verilog -lib work "../../source/i2c_master/i2c_master_byte_rx_fsm.v" 
+add_file -verilog -lib work "../../source/i2c_master/i2c_master_cntrl_fsm.v" 
+add_file -verilog -lib work "../../source/i2c_master/i2c_master_scl_gen.v" 
+add_file -verilog -lib work "../../source/i2c_master/i2c_master_byte_tx_fsm.v" 
+add_file -verilog -lib work "../../source/i2c_master/i2c_master_start_gen.v" 
+add_file -verilog -lib work "../../source/i2c_master/i2c_master_stop_gen.v" 
+add_file -verilog -lib work "../../source/i2c_master/i2c_reg_ctrl.v" 
+add_file -verilog -lib work "../../source/sensor_ctrl/LSM330DLC_accl.v" 
+add_file -verilog -lib work "../../source/variance/variance_fifo.v" 
+add_file -verilog -lib work "../../source/variance/variance.v" 
+add_file -verilog -lib work "../../source/variance_sma/variance_sma.v" 
+add_file -verilog -lib work "../../source/variance_sma/variance_sma_fifo.v" 
+add_file -verilog -lib work "../../source/uart/uart_lite_transceiver.v" 
+add_file -verilog -lib work "../../source/uart/uart_master_controller.v" 
+add_file -verilog -lib work "../../source/uart/uart_reg_fsm.v" 
+add_file -verilog -lib work "../../source/uart/uart_rx_fsm.v" 
+add_file -verilog -lib work "../../source/uart/uart_top.v" 
+add_file -verilog -lib work "../../source/uart/uart_tx_fsm.v" 
+add_file -verilog -lib work "../../source/step_detection/step_detection.v" 
+add_file -verilog -lib work "../../source/top_level/pedometer.v" 
+add_file -verilog -lib work "../../source/sma_eight/sma_eight.v" 
+add_file -verilog -lib work "../../source/sma_eight/sma_eight_fifo.v" 
+add_file -verilog -lib work "../../source/mean_sma/mean_sma.v" 
+add_file -verilog -lib work "../../source/mean_sma/mean_sma_fifo.v" 
+#implementation: "project_Implmnt"
+impl -add project_Implmnt -type fpga
+
+#
+#implementation attributes
+
+set_option -vlog_std v2001
+set_option -project_relative_includes 1
+set_option -include_path {../../source}
+
+#device options
+set_option -technology SBTiCE5LP
+set_option -part iCE5LP4K
+set_option -package SWG36
+set_option -speed_grade 
+set_option -part_companion ""
+
+#compilation/mapping options
+set_option -top_module "work.pedometer"
+
+# mapper_options
+set_option -frequency auto
+set_option -write_verilog 0
+set_option -write_vhdl 0
+set_option -srs_instrumentation 1
+
+# Lattice iCE5LP
+set_option -maxfan 10000
+set_option -RWCheckOnRam 0
+set_option -disable_io_insertion 0
+set_option -pipe 1
+set_option -retiming 0
+set_option -update_models_cp 0
+set_option -fix_gated_and_generated_clocks 1
+set_option -run_prop_extract 1
+
+# sequential_optimization_options
+set_option -symbolic_fsm_compiler 1
+
+# Compiler Options
+set_option -compiler_compatible 0
+set_option -resource_sharing 1
+
+# Compiler Options
+set_option -auto_infer_blackbox 0
+
+#automatic place and route (vendor) options
+set_option -write_apr_constraint 1
+
+#set result format/file last
+project -result_file "./project_Implmnt/project.edf"
+impl -active project_Implmnt
+project -run synthesis -clean
