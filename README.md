@@ -1,1 +1,1 @@
-# iCE40UltraPedometerDesignFiles
+# Model Zoo test directory
