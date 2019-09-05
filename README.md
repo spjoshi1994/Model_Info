@@ -1,1 +1,1 @@
-# Model Zoo test directory
+# Lattice Model Zoo test directory
