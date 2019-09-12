@@ -1,0 +1,46 @@
+[
+    {
+        "model_name": "default_example. This should be unique for each model entry",
+        "git_url": "This should be git url of the model. To clone a particular branch specify in url itself.",
+        "target_device": "ECP5 or Ultra Plus.",
+        "target_application": "This will be the type of application this model targets e.g. Object Detection, Face Detection, etc",
+        "target_class": "BNN or CNN.",
+        "input_dim": "This will be input dimension for images to feed the network e.g. 224x224, 64x64, etc.",
+        "target_network": "This can network architecture type e.g. YOLO, squeezeDet, etc.",
+        "target_framework": "This will be the framework used e.g TensorFlow or Keras.",
+	"other_param" : "This will be extra param to differentiate same Model but different version"
+    },
+    {
+	"model_name": "Human Count",
+        "git_url": "https://github.com/LatticeSemi/Human-Count.git",
+        "target_device": "ECP5",
+        "target_application": "Object Detection",
+        "target_class": "CNN",
+        "input_dim": "224x224",
+        "target_network": "SqueezeDet",
+        "target_framework": "TensorFlow",
+	"other_param" : ""
+    },
+    {
+	"model_name": "Human Presence",
+        "git_url": "https://github.com/LatticeSemi/Human-Presence-Detetction.git",
+        "target_device": "Ultra Plus",
+        "target_application": "Object Detection",
+        "target_class": "CNN",
+        "input_dim": "64x64",
+        "target_network": "SqueezeDet",
+        "target_framework": "TensorFlow",
+	"other_param" : ""
+    },
+    {
+	"model_name": "Human Presence 2.1",
+        "git_url": "https://github.com/LatticeSemi/Human-Presence-Detetction.git -b 2.1",
+        "target_device": "Ultra Plus",
+        "target_application": "Object Detection",
+        "target_class": "CNN",
+        "input_dim": "64x64",
+        "target_network": "SqueezeDet",
+        "target_framework": "TensorFlow",
+	"other_param" : "quantization: True"
+    }
+]
