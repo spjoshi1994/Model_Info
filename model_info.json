@@ -42,5 +42,16 @@
         "target_network": "SqueezeDet",
         "target_framework": "TensorFlow",
 	"other_param" : "quantization: True"
+    },
+    {
+	"model_name": "Face Detection",
+        "git_url": "https://github.com/LatticeSemi/Face-Detection.git",
+        "target_device": "ECP5",
+        "target_application": "Object Detection",
+        "target_class": "CNN",
+        "input_dim": "64x64",
+        "target_network": "SqueezeNet",
+        "target_framework": "TensorFlow",
+	"other_param" : ""
     }
 ]
