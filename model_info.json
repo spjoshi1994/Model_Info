@@ -12,7 +12,7 @@
     },
     {
 	"model_name": "Human Count",
-        "git_url": "https://github.com/LatticeSemi/Human-Count.git",
+        "git_url": "https://github.com/LatticeSemi/Human-Count.git -b 2.0",
         "target_device": "ECP5",
         "target_application": "Object Detection",
         "target_class": "CNN",
@@ -23,7 +23,7 @@
     },
     {
 	"model_name": "Human Presence",
-        "git_url": "https://github.com/LatticeSemi/Human-Presence-Detetction.git",
+        "git_url": "https://github.com/LatticeSemi/Human-Presence-Detetction.git -b 2.0",
         "target_device": "Ultra Plus",
         "target_application": "Object Detection",
         "target_class": "CNN",
