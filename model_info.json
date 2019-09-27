@@ -53,5 +53,16 @@
         "target_network": "SqueezeNet",
         "target_framework": "TensorFlow",
 	"other_param" : ""
+    },
+    {
+	"model_name": "Key Phrase Detection 2.1",
+        "git_url": "https://github.com/LatticeSemi/Key-Phrase-Detection.git",
+        "target_device": "Ultra Plus",
+        "target_application": "Keyword Detection",
+        "target_class": "CNN",
+        "input_dim": "1x8320",
+        "target_network": "tinyVGG",
+        "target_framework": "TensorFlow",
+	"other_param" : "quantization: True"
     }
 ]
