@@ -1,79 +1,773 @@
 [
-    {
-        "model_name": "default_example. This should be unique for each model entry",
-        "git_url": "This should be git url of the model. To clone a particular branch specify in url itself.",
-        "target_device": "ECP5 or Ultra Plus.",
-        "target_application": "This will be the type of application this model targets e.g. Object Detection, Face Detection, etc",
-        "target_class": "BNN or CNN.",
-        "input_dim": "This will be input dimension for images to feed the network e.g. 224x224, 64x64, etc.",
-        "target_network": "This can network architecture type e.g. YOLO, squeezeDet, etc.",
-        "target_framework": "This will be the framework used e.g TensorFlow or Keras.",
-	"other_param" : "This will be extra param to differentiate same Model but different version"
-    },
-    {
-	"model_name": "Human Count",
-        "git_url": "https://github.com/LatticeSemi/Human-Count.git -b 2.0",
-        "target_device": "ECP5",
-        "target_application": "Object Detection",
-        "target_class": "CNN",
-        "input_dim": "224x224",
-        "target_network": "SqueezeDet",
-        "target_framework": "TensorFlow",
-	"other_param" : ""
-    },
-    {
-	"model_name": "Human Count 2.1",
-        "git_url": "https://github.com/LatticeSemi/Human-Count.git -b 2.1",
-        "target_device": "ECP5",
-        "target_application": "Object Detection",
-        "target_class": "CNN",
-        "input_dim": "224x224",
-        "target_network": "SqueezeDet",
-        "target_framework": "TensorFlow",
-	"other_param" : ""
-    },
-    {
-	"model_name": "Human Presence",
-        "git_url": "https://github.com/LatticeSemi/Human-Presence-Detetction.git -b 2.0",
-        "target_device": "Ultra Plus",
-        "target_application": "Object Detection",
-        "target_class": "CNN",
-        "input_dim": "64x64",
-        "target_network": "SqueezeDet",
-        "target_framework": "TensorFlow",
-	"other_param" : ""
-    },
-    {
-	"model_name": "Human Presence 2.1",
-        "git_url": "https://github.com/LatticeSemi/Human-Presence-Detetction.git -b 2.1",
-        "target_device": "Ultra Plus",
-        "target_application": "Object Detection",
-        "target_class": "CNN",
-        "input_dim": "64x64",
-        "target_network": "SqueezeDet",
-        "target_framework": "TensorFlow",
-	"other_param" : "quantization: True"
-    },
-    {
-	"model_name": "Face Detection",
-        "git_url": "https://github.com/LatticeSemi/Face-Detection.git",
-        "target_device": "ECP5",
-        "target_application": "Object Detection",
-        "target_class": "CNN",
-        "input_dim": "64x64",
-        "target_network": "SqueezeNet",
-        "target_framework": "TensorFlow",
-	"other_param" : ""
-    },
-    {
-	"model_name": "Key Phrase Detection 2.1",
-        "git_url": "https://github.com/LatticeSemi/Key-Phrase-Detection.git",
-        "target_device": "Ultra Plus",
-        "target_application": "Keyword Detection",
-        "target_class": "CNN",
-        "input_dim": "1x8320",
-        "target_network": "tinyVGG",
-        "target_framework": "TensorFlow",
-	"other_param" : "quantization: True"
-    }
+	{
+		"version": 0.2
+	},
+	{
+		"model_name": "default_example. This should be unique for each model entry",
+		"git_url": "This should be git url of the model. To clone a particular branch specify in url itself.",
+		"model_spec": {
+			"target_device": "ECP5, Ultra Plus and more.",
+			"target_application": "This will be the type of application this model targets e.g. Object Detection, Face Detection, etc",
+			"target_class": "BNN or CNN.",
+			"input_dim": "This will be input dimension for images to feed the network e.g. 224x224, 64x64, etc.",
+			"target_network": "This can network architecture type e.g. YOLO, squeezeDet, etc.",
+			"target_framework": "This will be the framework used e.g TensorFlow or Keras.",
+			"sensAI_version": "Target sensAI version. Ex : ['V2.0.0', 'V2.1.0-Beta', 'V3.0']",
+			"other_param": "This will be extra param to differentiate same Model but different version"
+		},
+		"sections": {
+			"_comment": "Here User can define multiple sections like training, freeze, tensorboard, evaluation and many more.",
+			"example_section": {
+				"_comment": "Section name should unique for one model. Section contains information that how to run the section. Section has mainly three type of parameters, command, execution_script and other_parameters.",
+				"command": {
+					"run_type": "This parameter determines how to run the given file. Ex: python3, shell, tensorboard etc."
+				},
+				"execution_script": {
+					"default": "Path to file from model's root directory",
+					"type": "file",
+					"required": true
+				},
+				"other_parameters": {
+					"default": "This contains default value for perticular parameter.",
+					"type": "This contains type of parameter. Like file, dir, int, str, flag, float",
+					"required": "true or false based on parameter is required or not."
+				}
+			}
+		}
+	},
+	{
+		"model_name": "Human Count",
+		"git_url": "https://github.com/LatticeSemi/Human-Count.git -b 2.0",
+		"model_spec": {
+			"target_device": "ECP5",
+			"target_application": "Object Detection",
+			"target_class": "CNN",
+			"input_dim": "224x224",
+			"target_network": "SqueezeDet",
+			"target_framework": "TensorFlow",
+			"sensAI_version": "['V2.0.0', 'V2.1.0-Beta', 'V3.0']",
+			"other_param": ""
+		},
+		"sections": {
+			"training": {
+				"_comment": " Optional parameter: This determines that whether train section is available or not.",
+				"command": {
+					"run_type": "python3"
+				},
+				"execution_script": {
+					"default": "src/train.py",
+					"type": "file",
+					"required": true
+				},
+				"dataset": {
+					"default": "KITTI",
+					"type": "str",
+					"required": true
+				},
+				"net": {
+					"default": "squeezeDet",
+					"type": "str",
+					"required": true
+				},
+				"data_path": {
+					"type": "dir",
+					"required": true
+				},
+				"train_dir": {
+					"type": "dir",
+					"required": true
+				},
+				"image_set": {
+					"default": "train",
+					"type": "str",
+					"required": true
+				},
+				"summary_step": {
+					"default": "100",
+					"type": "int",
+					"required": true
+				},
+				"max_steps": {
+					"default": "250000",
+					"type": "int",
+					"required": true
+				},
+				"checkpoint_step": {
+					"default": "1000",
+					"type": "int",
+					"required": true
+				},
+				"gpu": {
+					"default": "-1",
+					"type": "int",
+					"required": true
+				}
+			},
+			"tensorboard": {
+				"command": {
+					"run_type": "tensorboard"
+				},
+				"logdir": {
+					"type": "dir",
+					"selector": "training.train_dir"
+				},
+				"port": {
+					"default": "6006",
+					"type": "int",
+					"required": true
+				}
+			}
+		}
+	},
+	{
+		"model_name": "Human Count 2.1",
+		"git_url": "https://github.com/LatticeSemi/Human-Count.git -b 2.1",
+		"model_spec": {
+			"target_device": "ECP5",
+			"target_application": "Object Detection",
+			"target_class": "CNN",
+			"input_dim": "224x224",
+			"target_network": "SqueezeDet",
+			"target_framework": "TensorFlow",
+			"sensAI_version": "['V2.1.0-Beta', 'V3.0']",
+			"other_param": ""
+		},
+		"sections": {
+			"training": {
+				"_comment": " Optional parameter: This determines that whether train section is available or not.",
+				"command": {
+					"run_type": "python3"
+				},
+				"execution_script": {
+					"default": "src/train.py",
+					"type": "file",
+					"required": true
+				},
+				"dataset": {
+					"default": "KITTI",
+					"type": "str",
+					"required": true
+				},
+				"net": {
+					"default": "squeezeDet",
+					"type": "str",
+					"required": true
+				},
+				"data_path": {
+					"type": "dir",
+					"required": true
+				},
+				"train_dir": {
+					"type": "dir",
+					"required": true
+				},
+				"image_set": {
+					"default": "train",
+					"type": "str",
+					"required": true
+				},
+				"summary_step": {
+					"default": "100",
+					"type": "int",
+					"required": true
+				},
+				"max_steps": {
+					"default": "250000",
+					"type": "int",
+					"required": true
+				},
+				"checkpoint_step": {
+					"default": "1000",
+					"type": "int",
+					"required": true
+				},
+				"gpu": {
+					"default": "-1",
+					"type": "int",
+					"required": true
+				}
+			},
+			"tensorboard": {
+				"command": {
+					"run_type": "tensorboard"
+				},
+				"logdir": {
+					"type": "dir",
+					"selector": "training.train_dir"
+				},
+				"port": {
+					"default": "6006",
+					"type": "int",
+					"required": true
+				}
+			},
+			"freeze": {
+				"_comment": " Optional parameter: This determines that whether freeze part is available or not.",
+				"command": {
+					"run_type": "python3"
+				},
+				"execution_script": {
+					"default": "src/genpb.py",
+					"type": "file",
+					"required": true
+				},
+				"ckpt_dir": {
+					"type": "dir",
+					"selector": "training.train_dir",
+					"required": true
+				},
+				"freeze": {
+					"default": "",
+					"type": "flag",
+					"required": true
+				}
+			}
+		}
+	},
+	{
+		"model_name": "Human Presence",
+		"git_url": "https://github.com/LatticeSemi/Human-Presence-Detetction.git -b 2.0",
+		"model_spec": {
+			"target_device": "Ultra Plus",
+			"target_application": "Object Detection",
+			"target_class": "CNN",
+			"input_dim": "64x64",
+			"target_network": "SqueezeDet",
+			"target_framework": "TensorFlow",
+			"sensAI_version": "['V2.0.0', 'V2.1.0-Beta', 'V3.0']",
+			"other_param": ""
+		},
+		"sections": {
+			"training": {
+				"_comment": " Optional parameter: This determines that whether train section is available or not.",
+				"command": {
+					"run_type": "python3"
+				},
+				"execution_script": {
+					"default": "src/train.py",
+					"type": "file",
+					"required": true
+				},
+				"dataset": {
+					"default": "KITTI",
+					"type": "str",
+					"required": true
+				},
+				"net": {
+					"default": "squeezeDet",
+					"type": "str",
+					"required": true
+				},
+				"data_path": {
+					"type": "dir",
+					"required": true
+				},
+				"train_dir": {
+					"type": "dir",
+					"required": true
+				},
+				"image_set": {
+					"default": "train",
+					"type": "str",
+					"required": true
+				},
+				"summary_step": {
+					"default": "100",
+					"type": "int",
+					"required": true
+				},
+				"max_steps": {
+					"default": "250000",
+					"type": "int",
+					"required": true
+				},
+				"checkpoint_step": {
+					"default": "1000",
+					"type": "int",
+					"required": true
+				},
+				"gpu": {
+					"default": "-1",
+					"type": "int",
+					"required": true
+				}
+			},
+			"tensorboard": {
+				"command": {
+					"run_type": "tensorboard"
+				},
+				"logdir": {
+					"type": "dir",
+					"selector": "training.train_dir"
+				},
+				"port": {
+					"default": "6006",
+					"type": "int",
+					"required": true
+				}
+			}
+		}
+	},
+	{
+		"model_name": "Human Presence 2.1",
+		"git_url": "https://github.com/LatticeSemi/Human-Presence-Detetction.git -b 2.1",
+		"model_spec": {
+			"target_device": "Ultra Plus",
+			"target_application": "Object Detection",
+			"target_class": "CNN",
+			"input_dim": "64x64",
+			"target_network": "SqueezeDet",
+			"target_framework": "TensorFlow",
+			"sensAI_version": "['V2.1.0-Beta', 'V3.0']",
+			"other_param": ""
+		},
+		"sections": {
+			"training": {
+				"_comment": " Optional parameter: This determines that whether train section is available or not.",
+				"command": {
+					"run_type": "python3"
+				},
+				"execution_script": {
+					"default": "src/train.py",
+					"type": "file",
+					"required": true
+				},
+				"dataset": {
+					"default": "KITTI",
+					"type": "str",
+					"required": true
+				},
+				"net": {
+					"default": "squeezeDet",
+					"type": "str",
+					"required": true
+				},
+				"data_path": {
+					"type": "dir",
+					"required": true
+				},
+				"train_dir": {
+					"type": "dir",
+					"required": true
+				},
+				"image_set": {
+					"default": "train",
+					"type": "str",
+					"required": true
+				},
+				"summary_step": {
+					"default": "100",
+					"type": "int",
+					"required": true
+				},
+				"max_steps": {
+					"default": "250000",
+					"type": "int",
+					"required": true
+				},
+				"checkpoint_step": {
+					"default": "1000",
+					"type": "int",
+					"required": true
+				},
+				"gpu": {
+					"default": "-1",
+					"type": "int",
+					"required": true
+				}
+			},
+			"tensorboard": {
+				"command": {
+					"run_type": "tensorboard"
+				},
+				"logdir": {
+					"type": "file",
+					"selector": "training.train_dir"
+				},
+				"port": {
+					"default": "6006",
+					"type": "int",
+					"required": true
+				}
+			},
+			"freeze": {
+				"_comment": " Optional parameter: This determines that whether freeze part is available or not.",
+				"command": {
+					"run_type": "python3"
+				},
+				"execution_script": {
+					"default": "src/genpb.py",
+					"type": "file",
+					"required": true
+				},
+				"ckpt_dir": {
+					"type": "dir",
+					"selector": "training.train_dir",
+					"required": true
+				},
+				"freeze": {
+					"default": "",
+					"type": "flag",
+					"required": true
+				}
+			}
+		}
+	},
+	{
+		"model_name": "Key Phrase Detection 2.1",
+		"git_url": "https://github.com/LatticeSemi/Key-Phrase-Detection.git",
+		"model_spec": {
+			"target_device": "Ultra Plus",
+			"target_application": "Keyword Detection",
+			"target_class": "CNN",
+			"input_dim": "1x8320",
+			"target_network": "tinyVGG",
+			"target_framework": "TensorFlow",
+			"sensAI_version": "['V2.1.0-Beta', 'V3.0']",
+			"other_param": "quantization: True"
+		},
+		"sections": {
+			"filter_training": {
+				"_comment": " Optional parameter: This determines that whether train section is available or not.",
+				"command": {
+					"run_type": "python3"
+				},
+				"execution_script": {
+					"default": "train.py",
+					"type": "file",
+					"required": true
+				},
+				"model_architecture": {
+					"default": "tinyvgg_conv",
+					"type": "str",
+					"required": true
+				},
+				"sample_rate": {
+					"default": "8000",
+					"type": "int",
+					"required": true
+				},
+				"downsample": {
+					"default": "1",
+					"type": "int",
+					"required": true
+				},
+				"no_prefilter_bias": {
+					"default": "",
+					"type": "flag",
+					"required": true
+				},
+				"clip_duration_ms": {
+					"default": "1040",
+					"type": "str",
+					"required": true
+				},
+				"time_shift_ms": {
+					"default": "104.0",
+					"type": "float",
+					"required": true
+				},
+				"window_size_ms": {
+					"default": "32.0",
+					"type": "float",
+					"required": true
+				},
+				"window_stride_ms": {
+					"default": "16.0",
+					"type": "float",
+					"required": true
+				},
+				"dct_coefficient_count": {
+					"default": "64",
+					"type": "int",
+					"required": true
+				},
+				"background_volume": {
+					"default": "0.5",
+					"type": "float",
+					"required": true
+				},
+				"wanted_words": {
+					"default": "marvin,sheila,on,off,up,down,go,stop,left,right,yes,learn,visual,follow,no,cat,dog,bird,tree,house,bed,wow,happy,zero,one,two,three,four,five,six,seven,eight,nine,forward,backward",
+					"type": "str",
+					"required": true
+				},
+				"silence_percentage": {
+					"default": "5",
+					"type": "int",
+					"required": true
+				},
+				"unknown_percentage": {
+					"default": "5",
+					"type": "int",
+					"required": true
+				},
+				"how_many_training_steps": {
+					"default": "20000,20000,10000",
+					"type": "str",
+					"required": true
+				},
+				"learning_rate": {
+					"default": "0.01,0.001,0.0001",
+					"type": "str",
+					"required": true
+				},
+				"batch_size": {
+					"default": "100",
+					"type": "int",
+					"required": true
+				},
+				"train_dir": {
+					"type": "dir",
+					"required": true
+				},
+				"data_dir": {
+					"type": "dir",
+					"required": true
+				},
+				"optimizer": {
+					"default": "Adam",
+					"type": "str",
+					"required": true
+				},
+				"data_url": {
+					"default": "''",
+					"type": "str",
+					"required": true
+				},
+				"summaries_dir": {
+					"type": "dir",
+					"required": true
+				}
+			},
+			"keyword_training": {
+				"_comment": " Optional parameter: This determines that whether train section is available or not.",
+				"command": {
+					"run_type": "python3"
+				},
+				"execution_script": {
+					"default": "train.py",
+					"type": "file",
+					"required": true
+				},
+				"model_architecture": {
+					"default": "tinyvgg_conv",
+					"type": "str",
+					"required": true
+				},
+				"sample_rate": {
+					"default": "8000",
+					"type": "int",
+					"required": true
+				},
+				"downsample": {
+					"default": "1",
+					"type": "int",
+					"required": true
+				},
+				"no_prefilter_bias": {
+					"default": "",
+					"type": "flag",
+					"required": true
+				},
+				"clip_duration_ms": {
+					"default": "1040",
+					"type": "str",
+					"required": true
+				},
+				"time_shift_ms": {
+					"default": "104.0",
+					"type": "float",
+					"required": true
+				},
+				"window_size_ms": {
+					"default": "32.0",
+					"type": "float",
+					"required": true
+				},
+				"window_stride_ms": {
+					"default": "16.0",
+					"type": "float",
+					"required": true
+				},
+				"dct_coefficient_count": {
+					"default": "64",
+					"type": "int",
+					"required": true
+				},
+				"background_volume": {
+					"default": "0.5",
+					"type": "float",
+					"required": true
+				},
+				"wanted_words": {
+					"default": "seven,marvin,on,happy",
+					"type": "str",
+					"required": true
+				},
+				"silence_percentage": {
+					"default": "100",
+					"type": "int",
+					"required": true
+				},
+				"unknown_percentage": {
+					"default": "100",
+					"type": "int",
+					"required": true
+				},
+				"how_many_training_steps": {
+					"default": "20000,20000,10000",
+					"type": "str",
+					"required": true
+				},
+				"learning_rate": {
+					"default": "0.01,0.001,0.0001",
+					"type": "str",
+					"required": true
+				},
+				"batch_size": {
+					"default": "100",
+					"type": "int",
+					"required": true
+				},
+				"train_dir": {
+					"type": "dir",
+					"required": true
+				},
+				"data_dir": {
+					"type": "dir",
+					"required": true
+				},
+				"optimizer": {
+					"default": "Adam",
+					"type": "str",
+					"required": true
+				},
+				"data_url": {
+					"default": "''",
+					"type": "str",
+					"required": true
+				},
+				"summaries_dir": {
+					"type": "dir",
+					"required": true
+				},
+				"set_prefilter": {
+					"type": "dir",
+					"required": true
+				},
+				"lock_prefilter": {
+					"default": "",
+					"type": "flag",
+					"required": true
+				}
+			},
+			"tensorboard": {
+				"command": {
+					"run_type": "tensorboard"
+				},
+				"logdir": {
+					"type": "dir",
+					"selector": "training.train_dir"
+				},
+				"port": {
+					"default": "6006",
+					"type": "int",
+					"required": true
+				}
+			},
+			"generate_frozen_graph": {
+				"command": {
+					"run_type": "python3"
+				},
+				"execution_script": {
+					"default": "train.py",
+					"type": "file",
+					"required": true
+				},
+				"model_architecture": {
+					"default": "tinyvgg_conv",
+					"type": "str",
+					"required": true
+				},
+				"sample_rate": {
+					"default": "8000",
+					"type": "int",
+					"required": true
+				},
+				"downsample": {
+					"default": "1",
+					"type": "int",
+					"required": true
+				},
+				"no_prefilter_bias": {
+					"default": "",
+					"type": "flag",
+					"required": true
+				},
+				"clip_duration_ms": {
+					"default": "1040",
+					"type": "str",
+					"required": true
+				},
+				"time_shift_ms": {
+					"default": "104.0",
+					"type": "float",
+					"required": true
+				},
+				"window_size_ms": {
+					"default": "32.0",
+					"type": "float",
+					"required": true
+				},
+				"window_stride_ms": {
+					"default": "16.0",
+					"type": "float",
+					"required": true
+				},
+				"dct_coefficient_count": {
+					"default": "64",
+					"type": "int",
+					"required": true
+				},
+				"background_volume": {
+					"default": "0.5",
+					"type": "float",
+					"required": true
+				},
+				"wanted_words": {
+					"default": "seven,marvin,on,happy",
+					"type": "str",
+					"required": true
+				},
+				"freeze": {
+					"default": "",
+					"type": "flag",
+					"required": true
+				},
+				"train_dir": {
+					"type": "dir",
+					"required": true
+				},
+				"data_dir": {
+					"type": "dir",
+					"required": true
+				}
+			},
+			"generate_frozen_pb": {
+				"command": {
+					"run_type": "python3"
+				},
+				"execution_script": {
+					"default": "genpb.py",
+					"type": "file",
+					"required": true
+				},
+				"ckpt_dir": {
+					"type": "dir",
+					"required": true
+				}
+			}
+		}
+	}
 ]
