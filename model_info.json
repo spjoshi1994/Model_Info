@@ -55,49 +55,59 @@
 					"run_type": "python3"
 				},
 				"execution_script": {
+					"name": "Execution Script",
 					"default": "src/train.py",
 					"type": "file",
 					"required": true
 				},
 				"dataset": {
+					"name": "Dataset Type",
 					"default": "KITTI",
 					"type": "str",
 					"required": true
 				},
 				"net": {
+					"name": "Architecture",
 					"default": "squeezeDet",
 					"type": "str",
 					"required": true
 				},
 				"data_path": {
+					"name": "Dataset Path",
 					"type": "dir",
 					"required": true
 				},
 				"train_dir": {
+					"name": "Checkpoint Path",
 					"type": "dir",
 					"required": true
 				},
 				"image_set": {
+					"name": "Image Set",
 					"default": "train",
 					"type": "str",
 					"required": true
 				},
 				"summary_step": {
+					"name": "Summary Steps",
 					"default": "100",
 					"type": "int",
 					"required": true
 				},
 				"max_steps": {
+					"name": "Max Steps",
 					"default": "250000",
 					"type": "int",
 					"required": true
 				},
 				"checkpoint_step": {
+					"name": "Checkpoint Interval",
 					"default": "1000",
 					"type": "int",
 					"required": true
 				},
 				"gpu": {
+					"name": "Visible GPUs",
 					"default": "-1",
 					"type": "int",
 					"required": true
@@ -108,10 +118,13 @@
 					"run_type": "tensorboard"
 				},
 				"logdir": {
+					"name": "Eventfile Path",
 					"type": "dir",
-					"selector": "training.train_dir"
+					"selector": "training.train_dir",
+					"required": true
 				},
 				"port": {
+					"name": "Tensorboard Port",
 					"default": "6006",
 					"type": "int",
 					"required": true
@@ -139,49 +152,59 @@
 					"run_type": "python3"
 				},
 				"execution_script": {
+					"name": "Execution Script",
 					"default": "src/train.py",
 					"type": "file",
 					"required": true
 				},
 				"dataset": {
+					"name": "Dataset Type",
 					"default": "KITTI",
 					"type": "str",
 					"required": true
 				},
 				"net": {
+					"name": "Architecture",
 					"default": "squeezeDet",
 					"type": "str",
 					"required": true
 				},
 				"data_path": {
+					"name": "Dataset Path",
 					"type": "dir",
 					"required": true
 				},
 				"train_dir": {
+					"name": "Checkpoint Path",
 					"type": "dir",
 					"required": true
 				},
 				"image_set": {
+					"name": "Image Set",
 					"default": "train",
 					"type": "str",
 					"required": true
 				},
 				"summary_step": {
+					"name": "Summary Steps",
 					"default": "100",
 					"type": "int",
 					"required": true
 				},
 				"max_steps": {
+					"name": "Max Steps",
 					"default": "250000",
 					"type": "int",
 					"required": true
 				},
 				"checkpoint_step": {
+					"name": "Checkpoint Interval",
 					"default": "1000",
 					"type": "int",
 					"required": true
 				},
 				"gpu": {
+					"name": "Visible GPUs",
 					"default": "-1",
 					"type": "int",
 					"required": true
@@ -192,10 +215,13 @@
 					"run_type": "tensorboard"
 				},
 				"logdir": {
+					"name": "Eventfile Path",
 					"type": "dir",
-					"selector": "training.train_dir"
+					"selector": "training.train_dir",
+					"required": true
 				},
 				"port": {
+					"name": "Tensorboard Path",
 					"default": "6006",
 					"type": "int",
 					"required": true
@@ -207,11 +233,13 @@
 					"run_type": "python3"
 				},
 				"execution_script": {
+					"name": "Execution Script",
 					"default": "src/genpb.py",
 					"type": "file",
 					"required": true
 				},
 				"ckpt_dir": {
+					"name": "Checkpoint Path",
 					"type": "dir",
 					"selector": "training.train_dir",
 					"required": true
@@ -244,49 +272,59 @@
 					"run_type": "python3"
 				},
 				"execution_script": {
+					"name": "Execution Script",
 					"default": "src/train.py",
 					"type": "file",
 					"required": true
 				},
 				"dataset": {
+					"name": "Dataset Type",
 					"default": "KITTI",
 					"type": "str",
 					"required": true
 				},
 				"net": {
+					"name": "Architecture",
 					"default": "squeezeDet",
 					"type": "str",
 					"required": true
 				},
 				"data_path": {
+					"name": "Dataset Path",
 					"type": "dir",
 					"required": true
 				},
 				"train_dir": {
+					"name": "Checkpoint Path",
 					"type": "dir",
 					"required": true
 				},
 				"image_set": {
+					"name": "Image Set",
 					"default": "train",
 					"type": "str",
 					"required": true
 				},
 				"summary_step": {
+					"name": "Summary Steps",
 					"default": "100",
 					"type": "int",
 					"required": true
 				},
 				"max_steps": {
+					"name": "Max Steps",
 					"default": "250000",
 					"type": "int",
 					"required": true
 				},
 				"checkpoint_step": {
+					"name": "Checkpoint Interval",
 					"default": "1000",
 					"type": "int",
 					"required": true
 				},
 				"gpu": {
+					"name": "Visible GPU",
 					"default": "-1",
 					"type": "int",
 					"required": true
@@ -297,10 +335,13 @@
 					"run_type": "tensorboard"
 				},
 				"logdir": {
+					"name": "Eventfile Path",
 					"type": "dir",
-					"selector": "training.train_dir"
+					"selector": "training.train_dir",
+					"required": true
 				},
 				"port": {
+					"name": "Tensorboard Port",
 					"default": "6006",
 					"type": "int",
 					"required": true
@@ -328,49 +369,59 @@
 					"run_type": "python3"
 				},
 				"execution_script": {
+					"name": "Execution Script",
 					"default": "src/train.py",
 					"type": "file",
 					"required": true
 				},
 				"dataset": {
+					"name": "Dataset Type",
 					"default": "KITTI",
 					"type": "str",
 					"required": true
 				},
 				"net": {
+					"name": "Architecture",
 					"default": "squeezeDet",
 					"type": "str",
 					"required": true
 				},
 				"data_path": {
+					"name": "Dataset Path",
 					"type": "dir",
 					"required": true
 				},
 				"train_dir": {
+					"name": "Checkpoint Path",
 					"type": "dir",
 					"required": true
 				},
 				"image_set": {
+					"name": "Image Set",
 					"default": "train",
 					"type": "str",
 					"required": true
 				},
 				"summary_step": {
+					"name": "Summary Step Interval",
 					"default": "100",
 					"type": "int",
 					"required": true
 				},
 				"max_steps": {
+					"name": "Max Steps",
 					"default": "250000",
 					"type": "int",
 					"required": true
 				},
 				"checkpoint_step": {
+					"name": "Checkpoint Interval",
 					"default": "1000",
 					"type": "int",
 					"required": true
 				},
 				"gpu": {
+					"name": "Visible GPU",
 					"default": "-1",
 					"type": "int",
 					"required": true
@@ -381,10 +432,13 @@
 					"run_type": "tensorboard"
 				},
 				"logdir": {
+					"name": "Eventfile Path",
 					"type": "file",
-					"selector": "training.train_dir"
+					"selector": "training.train_dir",
+					"required": true
 				},
 				"port": {
+					"name": "Tensorboard Path",
 					"default": "6006",
 					"type": "int",
 					"required": true
@@ -396,11 +450,13 @@
 					"run_type": "python3"
 				},
 				"execution_script": {
+					"name": "Execution Script",
 					"default": "src/genpb.py",
 					"type": "file",
 					"required": true
 				},
 				"ckpt_dir": {
+					"name": "Checkpoint Path",
 					"type": "dir",
 					"selector": "training.train_dir",
 					"required": true
@@ -433,21 +489,25 @@
 					"run_type": "python3"
 				},
 				"execution_script": {
+					"name": "Execution Script",
 					"default": "train.py",
 					"type": "file",
 					"required": true
 				},
 				"model_architecture": {
+					"name": "Architecture",
 					"default": "tinyvgg_conv",
 					"type": "str",
 					"required": true
 				},
 				"sample_rate": {
+					"name": "Audio Samplerate",
 					"default": "8000",
 					"type": "int",
 					"required": true
 				},
 				"downsample": {
+					"name": "Downsample",
 					"default": "1",
 					"type": "int",
 					"required": true
@@ -488,54 +548,65 @@
 					"required": true
 				},
 				"wanted_words": {
+					"name": "Training Words",
 					"default": "marvin,sheila,on,off,up,down,go,stop,left,right,yes,learn,visual,follow,no,cat,dog,bird,tree,house,bed,wow,happy,zero,one,two,three,four,five,six,seven,eight,nine,forward,backward",
 					"type": "str",
 					"required": true
 				},
 				"silence_percentage": {
+					"name": "Silence Percentage",
 					"default": "5",
 					"type": "int",
 					"required": true
 				},
 				"unknown_percentage": {
+					"name": "Unknown Percentage",
 					"default": "5",
 					"type": "int",
 					"required": true
 				},
 				"how_many_training_steps": {
+					"name": "Training Steps List",
 					"default": "20000,20000,10000",
 					"type": "str",
 					"required": true
 				},
 				"learning_rate": {
+					"name": "Learning-rate List",
 					"default": "0.01,0.001,0.0001",
 					"type": "str",
 					"required": true
 				},
 				"batch_size": {
+					"name": "Batch Size",
 					"default": "100",
 					"type": "int",
 					"required": true
 				},
 				"train_dir": {
+					"name": "Checkpoint Path",
 					"type": "dir",
 					"required": true
 				},
 				"data_dir": {
+					"name": "Dataset Path",
 					"type": "dir",
 					"required": true
 				},
 				"optimizer": {
+					"name": "Training Optimizer",
 					"default": "Adam",
 					"type": "str",
 					"required": true
 				},
 				"data_url": {
+					"name": "Dataset Download url",
 					"default": "''",
 					"type": "str",
 					"required": true
 				},
 				"summaries_dir": {
+					"name": "Eventfile Path",
 					"type": "dir",
 					"required": true
 				}
@@ -546,21 +617,25 @@
 					"run_type": "python3"
 				},
 				"execution_script": {
+					"name": "Execution Script",
 					"default": "train.py",
 					"type": "file",
 					"required": true
 				},
 				"model_architecture": {
+					"name": "Architecture",
 					"default": "tinyvgg_conv",
 					"type": "str",
 					"required": true
 				},
 				"sample_rate": {
+					"name": "Samplerate",
 					"default": "8000",
 					"type": "int",
 					"required": true
 				},
 				"downsample": {
+					"name": "Downsample",
 					"default": "1",
 					"type": "int",
 					"required": true
@@ -596,63 +671,76 @@
 					"required": true
 				},
 				"background_volume": {
+					"name": "Noise Volume",
 					"default": "0.5",
 					"type": "float",
 					"required": true
 				},
 				"wanted_words": {
+					"name": "Training Words",
 					"default": "seven,marvin,on,happy",
 					"type": "str",
 					"required": true
 				},
 				"silence_percentage": {
+					"name": "Silence Percentage",
 					"default": "100",
 					"type": "int",
 					"required": true
 				},
 				"unknown_percentage": {
+					"name": "Unknown Percentage",
 					"default": "100",
 					"type": "int",
 					"required": true
 				},
 				"how_many_training_steps": {
+					"name": "Training Steps List",
 					"default": "20000,20000,10000",
 					"type": "str",
 					"required": true
 				},
 				"learning_rate": {
+					"name": "Learning-rate List",
 					"default": "0.01,0.001,0.0001",
 					"type": "str",
 					"required": true
 				},
 				"batch_size": {
+					"name": "Batch Size",
 					"default": "100",
 					"type": "int",
 					"required": true
 				},
 				"train_dir": {
+					"name": "Checkpoint Path",
 					"type": "dir",
 					"required": true
 				},
 				"data_dir": {
+					"name": "Dataset Path",
 					"type": "dir",
 					"required": true
 				},
 				"optimizer": {
+					"name": "Training Optimizer",
 					"default": "Adam",
 					"type": "str",
 					"required": true
 				},
 				"data_url": {
+					"name": "Dataset Download url",
 					"default": "''",
 					"type": "str",
 					"required": true
 				},
 				"summaries_dir": {
+					"name": "Eventfile Path",
 					"type": "dir",
 					"required": true
 				},
 				"set_prefilter": {
+					"name": "Prefilter Checkpoint Path",
 					"type": "dir",
 					"required": true
 				},
@@ -667,10 +755,13 @@
 					"run_type": "tensorboard"
 				},
 				"logdir": {
+					"name": "Eventfile Path",
 					"type": "dir",
-					"selector": "training.train_dir"
+					"selector": "training.train_dir",
+					"required": true
 				},
 				"port": {
+					"name": "Tensorboard Port",
 					"default": "6006",
 					"type": "int",
 					"required": true
@@ -681,16 +772,19 @@
 					"run_type": "python3"
 				},
 				"execution_script": {
+					"name": "Execution Script",
 					"default": "train.py",
 					"type": "file",
 					"required": true
 				},
 				"model_architecture": {
+					"name": "Architecture",
 					"default": "tinyvgg_conv",
 					"type": "str",
 					"required": true
 				},
 				"sample_rate": {
+					"name": "Audio Samplerate",
 					"default": "8000",
 					"type": "int",
 					"required": true
@@ -731,11 +825,13 @@
 					"required": true
 				},
 				"background_volume": {
+					"name": "Noise Volume",
 					"default": "0.5",
 					"type": "float",
 					"required": true
 				},
 				"wanted_words": {
+					"name": "Training Words",
 					"default": "seven,marvin,on,happy",
 					"type": "str",
 					"required": true
@@ -746,10 +842,12 @@
 					"required": true
 				},
 				"train_dir": {
+					"name": "checkpoint Path",
 					"type": "dir",
 					"required": true
 				},
 				"data_dir": {
+					"name": "Dataset Path",
 					"type": "dir",
 					"required": true
 				}
@@ -759,11 +857,13 @@
 					"run_type": "python3"
 				},
 				"execution_script": {
+					"name": "Execution Script",
 					"default": "genpb.py",
 					"type": "file",
 					"required": true
 				},
 				"ckpt_dir": {
+					"name": "checkpoint Path",
 					"type": "dir",
 					"required": true
 				}
