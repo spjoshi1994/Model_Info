@@ -1,5 +1,4 @@
-[
-	{
+[{
 		"version": 0.2
 	},
 	{
@@ -221,7 +220,7 @@
 					"required": true
 				},
 				"port": {
-					"name": "Tensorboard Path",
+					"name": "Tensorboard Port",
 					"default": "6006",
 					"type": "int",
 					"required": true
@@ -438,7 +437,7 @@
 					"required": true
 				},
 				"port": {
-					"name": "Tensorboard Path",
+					"name": "Tensorboard Port",
 					"default": "6006",
 					"type": "int",
 					"required": true
@@ -869,5 +868,377 @@
 				}
 			}
 		}
+	},
+	{
+		"model_name": "Human Count ECP5-ResNet-SqDet",
+		"git_url": "https://github.com/LatticeSemi/Human-Count.git -b ECP5-ResNet-SqDet",
+		"model_spec": {
+			"target_device": "ECP5",
+			"target_application": "Object Detection",
+			"target_class": "CNN",
+			"input_dim": "224*224",
+			"target_network": "SqueezeDet",
+			"target_framework": "TensorFlow",
+			"sensAI_version": "['V2.1.0-Beta', 'V3.0']",
+			"other_param": ""
+		},
+		"sections": {
+			"training": {
+				"_comment": "Optional parameter: This determines that whether train section is available or not.",
+				"command": {
+					"run_type": "python3"
+				},
+				"execution_script": {
+					"name": "Execution Script",
+					"default": "src/train.py",
+					"type": "file",
+					"required": true
+				},
+				"dataset": {
+					"name": "Dataset Type",
+					"default": "KITTI",
+					"type": "str",
+					"required": true
+				},
+				"net": {
+					"name": "Architecture",
+					"default": "squeezeDet",
+					"type": "str",
+					"required": true
+				},
+				"data_path": {
+					"name": "Dataset Path",
+					"type": "dir",
+					"required": true
+				},
+				"train_dir": {
+					"name": "Checkpoint Path",
+					"type": "dir",
+					"required": true
+				},
+				"image_set": {
+					"name": "Image Set",
+					"default": "train",
+					"type": "str",
+					"required": true
+				},
+				"summary_step": {
+					"name": "Summary Steps",
+					"default": "100",
+					"type": "int",
+					"required": true
+				},
+				"max_steps": {
+					"name": "Max Steps",
+					"default": "250000",
+					"type": "int",
+					"required": true
+				},
+				"checkpoint_step": {
+					"name": "Checkpoint Interval",
+					"default": "1000",
+					"type": "int",
+					"required": true
+				},
+				"gpu": {
+					"name": "Visible GPUs",
+					"default": "-1",
+					"type": "int",
+					"required": true
+				}
+			},
+			"tensorboard": {
+				"_comment": "optional",
+				"command": {
+					"run_type": "tensorboard"
+				},
+				"logdir": {
+					"name": "Eventfile Path",
+					"type": "dir",
+					"required": true
+				},
+				"port": {
+					"name": "Tensorboard Port",
+					"default": "6006",
+					"type": "int",
+					"required": true
+				}
+			},
+			"freeze": {
+				"_comment": "optional",
+				"command": {
+					"run_type": "python3"
+				},
+				"execution_script": {
+					"name": "Execution Script",
+					"default": "src/genpb.py",
+					"type": "file",
+					"required": true
+				},
+				"ckpt_dir": {
+					"name": "Checkpoint Path",
+					"type": "dir",
+					"required": true
+				},
+				"freeze": {
+					"default": "",
+					"type": "flag",
+					"required": true
+				}
+			}
+		}
+	},
+	{
+		"model_name": "Human Count ECP5-MobileNetV2-SqDet",
+		"git_url": "https://github.com/LatticeSemi/Human-Count.git -b ECP5-MobileNetV2-SqDet",
+		"model_spec": {
+			"target_device": "ECP5",
+			"target_application": "Object Detection",
+			"target_class": "CNN",
+			"input_dim": "224*224",
+			"target_network": "SqueezeDet",
+			"target_framework": "TensorFlow",
+			"sensAI_version": "['V2.1.0-Beta', 'V3.0']",
+			"other_param": ""
+		},
+		"sections": {
+			"training": {
+				"_comment": "Optional parameter: This determines that whether train section is available or not.",
+				"command": {
+					"run_type": "python3"
+				},
+				"execution_script": {
+					"name": "Execution Script",
+					"default": "src/train.py",
+					"type": "file",
+					"required": true
+				},
+				"dataset": {
+					"name": "Dataset Type",
+					"default": "KITTI",
+					"type": "str",
+					"required": true
+				},
+				"net": {
+					"name": "Architecture",
+					"default": "squeezeDet",
+					"type": "str",
+					"required": true
+				},
+				"data_path": {
+					"name": "Dataset Path",
+					"type": "dir",
+					"required": true
+				},
+				"train_dir": {
+					"name": "Checkpoint Path",
+					"type": "dir",
+					"required": true
+				},
+				"image_set": {
+					"name": "Image Set",
+					"default": "train",
+					"type": "str",
+					"required": true
+				},
+				"summary_step": {
+					"name": "Summary Steps",
+					"default": "100",
+					"type": "int",
+					"required": true
+				},
+				"max_steps": {
+					"name": "Max Steps",
+					"default": "250000",
+					"type": "int",
+					"required": true
+				},
+				"checkpoint_step": {
+					"name": "Checkpoint Interval",
+					"default": "1000",
+					"type": "int",
+					"required": true
+				},
+				"gpu": {
+					"name": "Visible GPUs",
+					"default": "-1",
+					"type": "int",
+					"required": true
+				}
+			},
+			"tensorboard": {
+				"_comment": "optional",
+				"command": {
+					"run_type": "tensorboard"
+				},
+				"logdir": {
+					"name": "Eventfile Path",
+					"type": "dir",
+					"required": true
+				},
+				"port": {
+					"name": "Tensorboard Port",
+					"default": "6006",
+					"type": "int",
+					"required": true
+				}
+			},
+			"freeze": {
+				"_comment": "optional",
+				"command": {
+					"run_type": "python3"
+				},
+				"execution_script": {
+					"name": "Execution Script",
+					"default": "src/genpb.py",
+					"type": "file",
+					"required": true
+				},
+				"ckpt_dir": {
+					"name": "Checkpoint Path",
+					"type": "dir",
+					"required": true
+				},
+				"freeze": {
+					"default": "",
+					"type": "flag",
+					"required": true
+				}
+			}
+		}
+	},
+	{
+		"model_name": "Human Count Crosslink-NX-VGG-SqDet",
+		"git_url": "https://github.com/LatticeSemi/Human-Count.git -b Crosslink-NX-VGG-SqDet",
+		"model_spec": {
+			"target_device": "ECP5",
+			"target_application": "Object Detection",
+			"target_class": "CNN",
+			"input_dim": "224*224",
+			"target_network": "SqueezeDet",
+			"target_framework": "TensorFlow",
+			"sensAI_version": "['V2.1.0-Beta', 'V3.0']",
+			"other_param": ""
+		},
+		"sections": {
+			"training": {
+				"_comment": "Optional parameter: This determines that whether train section is available or not.",
+				"command": {
+					"run_type": "python3"
+				},
+				"execution_script": {
+					"name": "Execution Script",
+					"default": "src/train.py",
+					"type": "file",
+					"required": true
+				},
+				"dataset": {
+					"name": "Dataset Type",
+					"default": "KITTI",
+					"type": "str",
+					"required": true
+				},
+				"net": {
+					"name": "Architecture",
+					"default": "squeezeDet",
+					"type": "str",
+					"required": true
+				},
+				"data_path": {
+					"name": "Dataset Path",
+					"type": "dir",
+					"required": true
+				},
+				"train_dir": {
+					"name": "Checkpoint Path",
+					"type": "dir",
+					"required": true
+				},
+				"image_set": {
+					"name": "Image Set",
+					"default": "train",
+					"type": "str",
+					"required": true
+				},
+				"summary_step": {
+					"name": "Summary Steps",
+					"default": "100",
+					"type": "int",
+					"required": true
+				},
+				"max_steps": {
+					"name": "Max Steps",
+					"default": "250000",
+					"type": "int",
+					"required": true
+				},
+				"checkpoint_step": {
+					"name": "Checkpoint Interval",
+					"default": "1000",
+					"type": "int",
+					"required": true
+				},
+				"gpu": {
+					"name": "Visible GPUs",
+					"default": "-1",
+					"type": "int",
+					"required": true
+				}
+			},
+			"tensorboard": {
+				"_comment": "optional",
+				"command": {
+					"run_type": "tensorboard"
+				},
+				"logdir": {
+					"name": "Eventfile Path",
+					"type": "dir",
+					"required": true
+				},
+				"port": {
+					"name": "Tensorboard Port",
+					"default": "6006",
+					"type": "int",
+					"required": true
+				}
+			},
+			"freeze": {
+				"_comment": "optional",
+				"command": {
+					"run_type": "python3"
+				},
+				"execution_script": {
+					"name": "Execution Script",
+					"default": "src/genpb.py",
+					"type": "file",
+					"required": true
+				},
+				"ckpt_dir": {
+					"name": "Checkpoint Path",
+					"type": "dir",
+					"required": true
+				},
+				"freeze": {
+					"default": "",
+					"type": "flag",
+					"required": true
+				}
+			}
+		}
+	},
+	{
+		"model_name": "Face Detection",
+		"git_url": "https://github.com/LatticeSemi/Face-Detection.git",
+		"model_spec": {
+			"target_device": "ECP5",
+			"target_application": "Object Detection",
+			"target_class": "CNN",
+			"input_dim": "64x64",
+			"target_network": "SqueezeNet",
+			"target_framework": "TensorFlow",
+			"sensAI_version": "['V2.1.0-Beta', 'V3.0']",
+			"other_param": ""
+		},
+		"sections": {}
 	}
 ]
