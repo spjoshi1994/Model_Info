@@ -29,6 +29,7 @@
 				"other_parameters": {
 					"default": "This contains default value for perticular parameter.",
 					"type": "This contains type of parameter. Like file, dir, int, str, flag, float",
+					"sub_type": "dataset or artefacts",
 					"required": "true or false based on parameter is required or not."
 				}
 			}
@@ -74,11 +75,13 @@
 				"data_path": {
 					"name": "Dataset Path",
 					"type": "dir",
+					"sub_type": "dataset",
 					"required": true
 				},
 				"train_dir": {
 					"name": "Checkpoint Path",
 					"type": "dir",
+					"sub_type": "artefacts",
 					"required": true
 				},
 				"image_set": {
@@ -119,6 +122,7 @@
 				"logdir": {
 					"name": "Eventfile Path",
 					"type": "dir",
+					"sub_type": "artefacts",
 					"selector": "training.train_dir",
 					"required": true
 				},
@@ -171,11 +175,13 @@
 				"data_path": {
 					"name": "Dataset Path",
 					"type": "dir",
+					"sub_type": "dataset",
 					"required": true
 				},
 				"train_dir": {
 					"name": "Checkpoint Path",
 					"type": "dir",
+					"sub_type": "artefacts",
 					"required": true
 				},
 				"image_set": {
@@ -216,6 +222,7 @@
 				"logdir": {
 					"name": "Eventfile Path",
 					"type": "dir",
+					"sub_type": "artefacts",
 					"selector": "training.train_dir",
 					"required": true
 				},
@@ -240,6 +247,7 @@
 				"ckpt_dir": {
 					"name": "Checkpoint Path",
 					"type": "dir",
+					"sub_type": "artefacts",
 					"selector": "training.train_dir",
 					"required": true
 				},
@@ -291,11 +299,13 @@
 				"data_path": {
 					"name": "Dataset Path",
 					"type": "dir",
+					"sub_type": "dataset",
 					"required": true
 				},
 				"train_dir": {
 					"name": "Checkpoint Path",
 					"type": "dir",
+					"sub_type": "artefacts",
 					"required": true
 				},
 				"image_set": {
@@ -336,6 +346,7 @@
 				"logdir": {
 					"name": "Eventfile Path",
 					"type": "dir",
+					"sub_type": "artefacts",
 					"selector": "training.train_dir",
 					"required": true
 				},
@@ -388,11 +399,13 @@
 				"data_path": {
 					"name": "Dataset Path",
 					"type": "dir",
+					"sub_type": "dataset",
 					"required": true
 				},
 				"train_dir": {
 					"name": "Checkpoint Path",
 					"type": "dir",
+					"sub_type": "artefacts",
 					"required": true
 				},
 				"image_set": {
@@ -457,6 +470,7 @@
 				"ckpt_dir": {
 					"name": "Checkpoint Path",
 					"type": "dir",
+					"sub_type": "artefacts",
 					"selector": "training.train_dir",
 					"required": true
 				},
@@ -585,11 +599,13 @@
 				"train_dir": {
 					"name": "Checkpoint Path",
 					"type": "dir",
+					"sub_type": "artefacts",
 					"required": true
 				},
 				"data_dir": {
 					"name": "Dataset Path",
 					"type": "dir",
+					"sub_type": "dataset",
 					"required": true
 				},
 				"optimizer": {
@@ -607,6 +623,7 @@
 				"summaries_dir": {
 					"name": "Eventfile Path",
 					"type": "dir",
+					"sub_type": "artefacts",
 					"required": true
 				}
 			},
@@ -714,11 +731,13 @@
 				"train_dir": {
 					"name": "Checkpoint Path",
 					"type": "dir",
+					"sub_type": "artefacts",
 					"required": true
 				},
 				"data_dir": {
 					"name": "Dataset Path",
 					"type": "dir",
+					"sub_type": "dataset",
 					"required": true
 				},
 				"optimizer": {
@@ -736,11 +755,13 @@
 				"summaries_dir": {
 					"name": "Eventfile Path",
 					"type": "dir",
+					"sub_type": "artefacts",
 					"required": true
 				},
 				"set_prefilter": {
 					"name": "Prefilter Checkpoint Path",
 					"type": "dir",
+					"sub_type": "artefacts",
 					"required": true
 				},
 				"lock_prefilter": {
@@ -756,6 +777,7 @@
 				"logdir": {
 					"name": "Eventfile Path",
 					"type": "dir",
+					"sub_type": "artefacts",
 					"selector": "training.train_dir",
 					"required": true
 				},
@@ -843,11 +865,13 @@
 				"train_dir": {
 					"name": "checkpoint Path",
 					"type": "dir",
+					"sub_type": "artefacts",
 					"required": true
 				},
 				"data_dir": {
 					"name": "Dataset Path",
 					"type": "dir",
+					"sub_type": "dataset",
 					"required": true
 				}
 			},
@@ -864,6 +888,7 @@
 				"ckpt_dir": {
 					"name": "checkpoint Path",
 					"type": "dir",
+					"sub_type": "artefacts",
 					"required": true
 				}
 			}
@@ -909,11 +934,13 @@
 				"data_path": {
 					"name": "Dataset Path",
 					"type": "dir",
+					"sub_type": "dataset",
 					"required": true
 				},
 				"train_dir": {
 					"name": "Checkpoint Path",
 					"type": "dir",
+					"sub_type": "artefacts",
 					"required": true
 				},
 				"image_set": {
@@ -955,6 +982,7 @@
 				"logdir": {
 					"name": "Eventfile Path",
 					"type": "dir",
+					"sub_type": "artefacts",
 					"required": true
 				},
 				"port": {
@@ -978,6 +1006,7 @@
 				"ckpt_dir": {
 					"name": "Checkpoint Path",
 					"type": "dir",
+					"sub_type": "artefacts",
 					"required": true
 				},
 				"freeze": {
@@ -1028,11 +1057,13 @@
 				"data_path": {
 					"name": "Dataset Path",
 					"type": "dir",
+					"sub_type": "dataset",
 					"required": true
 				},
 				"train_dir": {
 					"name": "Checkpoint Path",
 					"type": "dir",
+					"sub_type": "artefacts",
 					"required": true
 				},
 				"image_set": {
@@ -1074,6 +1105,7 @@
 				"logdir": {
 					"name": "Eventfile Path",
 					"type": "dir",
+					"sub_type": "artefacts",
 					"required": true
 				},
 				"port": {
@@ -1097,6 +1129,7 @@
 				"ckpt_dir": {
 					"name": "Checkpoint Path",
 					"type": "dir",
+					"sub_type": "artefacts",
 					"required": true
 				},
 				"freeze": {
@@ -1147,11 +1180,13 @@
 				"data_path": {
 					"name": "Dataset Path",
 					"type": "dir",
+					"sub_type": "dataset",
 					"required": true
 				},
 				"train_dir": {
 					"name": "Checkpoint Path",
 					"type": "dir",
+					"sub_type": "artefacts",
 					"required": true
 				},
 				"image_set": {
@@ -1193,6 +1228,7 @@
 				"logdir": {
 					"name": "Eventfile Path",
 					"type": "dir",
+					"sub_type": "artefacts",
 					"required": true
 				},
 				"port": {
@@ -1216,6 +1252,7 @@
 				"ckpt_dir": {
 					"name": "Checkpoint Path",
 					"type": "dir",
+					"sub_type": "artefacts",
 					"required": true
 				},
 				"freeze": {
