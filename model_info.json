@@ -446,6 +446,7 @@
 				"logdir": {
 					"name": "Eventfile Path",
 					"type": "file",
+					"sub_type": "artefacts",
 					"selector": "training.train_dir",
 					"required": true
 				},
