@@ -1,0 +1,166 @@
+{
+	"sensai_version": {
+		"name": "SensAI Version",
+		"type": "dropdown",
+		"options": {
+			"v2.0": "gcr.io/lattice-apps/sensai:v2.0",
+			"v3.0": "gcr.io/lattice-apps/sensai:v3.0",
+			"v3.1": "gcr.io/lattice-apps/sensai:v3.1"
+		},
+		"default": "v3.0",
+		"required": true
+	},
+	"sensai_options": {
+		"command": {
+			"run_type": "/lsc_ml_sdk/linux/lsc_ml_compl"
+		},
+		"cmd": {
+			"name": "Command",
+			"type": "checkboxes",
+			"options": {
+				"Analyze": "analyze",
+				"Compile": "compile",
+				"Simulate": "simulate"
+			},
+			"mandatory": "Analyze",
+			"default": "Analyze, Compile, Simulate",
+			"required": true
+		},
+		"project_name": {
+			"name": "SensAI Project Name",
+			"type": "str",
+			"required": true
+		},
+		"nnMode": {
+			"name": "Class",
+			"type": "dropdown",
+			"options": {
+				"CNN": 0,
+				"BNN": 1
+			},
+			"default": "CNN"
+		},
+		"framework": {
+			"name": "Framework",
+			"type": "dropdown",
+			"options": {
+				"Tensorflow": "Tensorflow",
+				"Keras": "Keras",
+				"Caffe": "Caffe"
+			},
+			"default": "Tensorflow",
+			"Tensorflow": {
+				"model_file": {
+					"name": "Tensorflow PB file",
+					"type": "str",
+					"required": "true",
+					"extenstions": "pb"
+				},
+				"image_files": {
+					"name": "Input image",
+					"type": "str",
+					"required": "true",
+					"extenstions": "jpeg, jpg, png"
+				}
+			},
+			"Caffe": {
+				"model_file": {
+					"name": "Caffe Model file",
+					"type": "str",
+					"required": "true",
+					"extenstions": "caffemodel"
+				},
+				"network_file": {
+					"name": "Caffe proto file",
+					"type": "str",
+					"required": "true",
+					"extenstions": "proto, prototxt"
+				},
+				"image_files": {
+					"name": "Input image",
+					"type": "str",
+					"required": "true",
+					"extenstions": "jpeg, jpg, png"
+				}
+			},
+			"Keras": {
+				"model_file": {
+					"name": "Keras Model file",
+					"type": "str",
+					"required": "true",
+					"extenstions": "h5"
+				},
+				"input_file": {
+					"name": "Input image",
+					"type": "str",
+					"required": "true",
+					"extenstions": "jpeg, jpg, png"
+				}
+			}
+		},
+		"device": {
+			"name": "Device",
+			"type": "dropdown",
+			"options": {
+				"ECP5": "ECP5",
+				"Ultra Plus": "Ultra Plus",
+				"CrossLink-NX": "CrossLink-NX"
+			},
+			"default": "CrossLink-NX",
+			"ECP5": {
+				"mobilenet_mode": {
+					"name": "MobileNet Mode",
+					"type": "checkbox",
+					"options": {
+						"unchecked": 0,
+						"checked": 1
+					},
+					"default": "unchecked"
+				},
+				"collapse_layer": {
+					"name": "Collpase",
+					"type": "checkbox",
+					"options": {
+						"unchecked": 0,
+						"checked": 1
+					},
+					"default": "checked"
+				},
+				"scale": {
+					"name": "Scale",
+					"type": "float",
+					"default": 1.0
+				},
+				"mean": {
+					"name": "Mean",
+					"type": "float",
+					"default": 0
+				}
+			},
+			"Ultra Plus": {
+				"scale": {
+					"name": "Scale",
+					"type": "float",
+					"default": 1.0
+				},
+				"mean": {
+					"name": "Mean",
+					"type": "float",
+					"default": 0
+				}
+			},
+			"CrossLink-NX": {
+				"scale": {
+					"name": "Scale",
+					"type": "float",
+					"default": 0.0078125
+				},
+				"mean": {
+					"name": "Mean",
+					"type": "float",
+					"default": 0
+				}
+			}
+		}
+	}
+}
