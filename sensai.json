@@ -52,13 +52,13 @@
 			"Tensorflow": {
 				"model_file": {
 					"name": "Tensorflow PB file",
-					"type": "str",
+					"type": "file",
 					"required": "true",
 					"extenstions": "pb"
 				},
 				"image_files": {
 					"name": "Input image",
-					"type": "str",
+					"type": "file_upload",
 					"required": "true",
 					"extenstions": "jpeg, jpg, png"
 				}
@@ -66,19 +66,19 @@
 			"Caffe": {
 				"model_file": {
 					"name": "Caffe Model file",
-					"type": "str",
+					"type": "file",
 					"required": "true",
 					"extenstions": "caffemodel"
 				},
 				"network_file": {
 					"name": "Caffe proto file",
-					"type": "str",
+					"type": "file",
 					"required": "true",
 					"extenstions": "proto, prototxt"
 				},
 				"image_files": {
 					"name": "Input image",
-					"type": "str",
+					"type": "file_upload",
 					"required": "true",
 					"extenstions": "jpeg, jpg, png"
 				}
@@ -86,13 +86,13 @@
 			"Keras": {
 				"model_file": {
 					"name": "Keras Model file",
-					"type": "str",
+					"type": "file",
 					"required": "true",
 					"extenstions": "h5"
 				},
 				"input_file": {
 					"name": "Input image",
-					"type": "str",
+					"type": "file_upload",
 					"required": "true",
 					"extenstions": "jpeg, jpg, png"
 				}
