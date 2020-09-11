@@ -21,7 +21,7 @@
 {
 	"name": "Tensorflow 1.14.0 v2",
 	"url": "gcr.io/lattice-apps/lattice_v0.1:latest",
-	"default": true,
+	"default": false,
 	"description": "Tensorflow 1.14.0",
 	"packages": [
 		"easydict=1.9",
