@@ -11,6 +11,7 @@
 			"input_dim": "This will be input dimension for images to feed the network e.g. 224x224, 64x64, etc.",
 			"target_network": "This can network architecture type e.g. YOLO, squeezeDet, etc.",
 			"target_framework": "This will be the framework used e.g TensorFlow or Keras.",
+			"target_framework_version": "This will be the version used for target framework.",
 			"sensAI_version": "Target sensAI version. Ex : ['V2.0.0', 'V2.1.0-Beta', 'V3.0']",
 			"other_param": "This will be extra param to differentiate same Model but different version"
 		},
@@ -45,6 +46,7 @@
 			"input_dim": "224x224",
 			"target_network": "SqueezeDet",
 			"target_framework": "TensorFlow",
+			"target_framework_version": "1.14.0",
 			"sensAI_version": "['V2.0.0', 'V2.1.0-Beta', 'V3.0']",
 			"other_param": ""
 		},
@@ -145,6 +147,7 @@
 			"input_dim": "224x224",
 			"target_network": "SqueezeDet",
 			"target_framework": "TensorFlow",
+			"target_framework_version": "1.14.0",
 			"sensAI_version": "['V2.1.0-Beta', 'V3.0']",
 			"other_param": ""
 		},
@@ -269,6 +272,7 @@
 			"input_dim": "64x64",
 			"target_network": "SqueezeDet",
 			"target_framework": "TensorFlow",
+			"target_framework_version": "1.14.0",
 			"sensAI_version": "['V2.0.0', 'V2.1.0-Beta', 'V3.0']",
 			"other_param": ""
 		},
@@ -369,6 +373,7 @@
 			"input_dim": "64x64",
 			"target_network": "SqueezeDet",
 			"target_framework": "TensorFlow",
+			"target_framework_version": "1.14.0",
 			"sensAI_version": "['V2.1.0-Beta', 'V3.0']",
 			"other_param": ""
 		},
@@ -493,6 +498,7 @@
 			"input_dim": "1x8320",
 			"target_network": "tinyVGG",
 			"target_framework": "TensorFlow",
+			"target_framework_version": "1.14.0",
 			"sensAI_version": "['V2.1.0-Beta', 'V3.0']",
 			"other_param": "quantization: True"
 		},
@@ -905,6 +911,7 @@
 			"input_dim": "224*224",
 			"target_network": "SqueezeDet",
 			"target_framework": "TensorFlow",
+			"target_framework_version": "1.14.0",
 			"sensAI_version": "['V2.1.0-Beta', 'V3.0']",
 			"other_param": ""
 		},
@@ -1028,6 +1035,7 @@
 			"input_dim": "224*224",
 			"target_network": "SqueezeDet",
 			"target_framework": "TensorFlow",
+			"target_framework_version": "1.14.0",
 			"sensAI_version": "['V2.1.0-Beta', 'V3.0']",
 			"other_param": ""
 		},
@@ -1151,6 +1159,7 @@
 			"input_dim": "224*224",
 			"target_network": "SqueezeDet",
 			"target_framework": "TensorFlow",
+			"target_framework_version": "1.14.0",
 			"sensAI_version": "['V2.1.0-Beta', 'V3.0']",
 			"other_param": ""
 		},
@@ -1274,6 +1283,7 @@
 			"input_dim": "64x64",
 			"target_network": "SqueezeNet",
 			"target_framework": "TensorFlow",
+			"target_framework_version": "1.14.0",
 			"sensAI_version": "['V2.1.0-Beta', 'V3.0']",
 			"other_param": ""
 		},
