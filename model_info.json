@@ -491,6 +491,10 @@
 					"required": true
 				}
 			}
+		},
+		"SensAI": {
+			"device": "Ultra Plus",
+			"scale": 0.0078125
 		}
 	},
 	{
@@ -1155,6 +1159,12 @@
 					"required": true
 				}
 			}
+		},
+		"SensAI": {
+			"device": "ECP5",
+			"scale": 0.0078125,
+			"mobilenet_mode": 1,
+			"collapse_layer": 1
 		}
 	},
 	{
@@ -1280,6 +1290,11 @@
 					"required": true
 				}
 			}
+		},
+		"SensAI": {
+			"device": "CrossLink-NX",
+			"scale": 0.0078125,
+			"collapse_layer": 1
 		}
 	},
 	{
