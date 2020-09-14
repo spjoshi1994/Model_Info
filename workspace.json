@@ -1,8 +1,10 @@
 [{
 	"name": "Tensorflow 1.14.0",
-	"url": "gcr.io/lattice-apps/lattice_v0.1:latest",
+	"url": "gcr.io/lattice-apps/ml-training:tf-1.14.0",
 	"default": true,
 	"description": "Tensorflow 1.14.0",
+	"framework": "TensorFlow",
+	"framework_version": "1.14.0",
 	"packages": [
 		"easydict=1.9",
 		"Keras=2.3.1",
@@ -19,10 +21,12 @@
 	 ]
 },
 {
-	"name": "Tensorflow 1.14.0 v2",
-	"url": "gcr.io/lattice-apps/lattice_v0.1:latest",
+	"name": "Tensorflow 2.0.0",
+	"url": "gcr.io/lattice-apps/ml-training:tf-2.0.0",
 	"default": false,
-	"description": "Tensorflow 1.14.0",
+	"description": "Tensorflow 2.0.0",
+	"framework": "TensorFlow",
+	"framework_version": "2.0.0",
 	"packages": [
 		"easydict=1.9",
 		"Keras=2.3.1",
