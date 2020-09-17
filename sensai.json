@@ -147,6 +147,10 @@
 					"name": "Mean",
 					"type": "float",
 					"default": 0
+				},
+				"required_output_depth_range": {
+					"name": "Required output depth range",
+					"type": "str"
 				}
 			},
 			"CrossLink-NX": {
@@ -158,6 +162,20 @@
 				"mean": {
 					"name": "Mean",
 					"type": "float",
+					"default": 0
+				},
+				"required_output_depth_range": {
+					"name": "Required output depth range",
+					"type": "str"
+				},
+				"crosslink_data_base_addr": {
+					"name": "Data Section Base address",
+					"type": "int",
+					"default": 4194304
+				},
+				"crosslink_code_base_addr": {
+					"name": "Code Section Base address",
+					"type": "int",
 					"default": 0
 				}
 			}
