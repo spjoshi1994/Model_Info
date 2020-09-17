@@ -44,14 +44,14 @@
 			"name": "Framework",
 			"type": "dropdown",
 			"options": {
-				"Tensorflow": "Tensorflow",
+				"TensorFlow": "TensorFlow",
 				"Keras": "Keras",
 				"Caffe": "Caffe"
 			},
-			"default": "Tensorflow",
-			"Tensorflow": {
+			"default": "TensorFlow",
+			"TensorFlow": {
 				"model_file": {
-					"name": "Tensorflow PB file",
+					"name": "TensorFlow PB file",
 					"type": "file",
 					"required": "true",
 					"extenstions": "pb"
