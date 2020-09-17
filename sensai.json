@@ -50,7 +50,7 @@
 			},
 			"default": "TensorFlow",
 			"TensorFlow": {
-				"model_file": {
+				"network_file": {
 					"name": "TensorFlow PB file",
 					"type": "file",
 					"required": "true",
@@ -84,7 +84,7 @@
 				}
 			},
 			"Keras": {
-				"model_file": {
+				"network_file": {
 					"name": "Keras Model file",
 					"type": "file",
 					"required": "true",
