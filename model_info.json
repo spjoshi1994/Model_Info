@@ -114,7 +114,7 @@
 				},
 				"gpu": {
 					"name": "Visible GPUs",
-					"default": "-1",
+					"default": "0",
 					"type": "int",
 					"required": true
 				}
@@ -216,7 +216,7 @@
 				},
 				"gpu": {
 					"name": "Visible GPUs",
-					"default": "-1",
+					"default": "0",
 					"type": "int",
 					"required": true
 				}
@@ -342,7 +342,7 @@
 				},
 				"gpu": {
 					"name": "Visible GPU",
-					"default": "-1",
+					"default": "0",
 					"type": "int",
 					"required": true
 				}
@@ -444,7 +444,7 @@
 				},
 				"gpu": {
 					"name": "Visible GPU",
-					"default": "-1",
+					"default": "0",
 					"type": "int",
 					"required": true
 				}
@@ -988,7 +988,7 @@
 				},
 				"gpu": {
 					"name": "Visible GPUs",
-					"default": "-1",
+					"default": "0",
 					"type": "int",
 					"required": true
 				}
@@ -1113,7 +1113,7 @@
 				},
 				"gpu": {
 					"name": "Visible GPUs",
-					"default": "-1",
+					"default": "0",
 					"type": "int",
 					"required": true
 				}
@@ -1244,7 +1244,7 @@
 				},
 				"gpu": {
 					"name": "Visible GPUs",
-					"default": "-1",
+					"default": "0",
 					"type": "int",
 					"required": true
 				}
