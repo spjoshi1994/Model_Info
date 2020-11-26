@@ -117,6 +117,13 @@
 					"default": "0",
 					"type": "int",
 					"required": true
+				},
+				"transfer_learning": {
+					"name": "Transfer Learning",
+					"default": false,
+					"type": "checkbox",
+					"required": false,
+					"url": "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/pre_trained_models/ecp5_vgg_sqdet_human_count.zip"
 				}
 			},
 			"tensorboard": {
@@ -219,6 +226,13 @@
 					"default": "0",
 					"type": "int",
 					"required": true
+				},
+				"transfer_learning": {
+					"name": "Transfer Learning",
+					"default": false,
+					"type": "checkbox",
+					"required": false,
+					"url": "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/pre_trained_models/ecp5_mv1_sqdet_human_count.zip"
 				}
 			},
 			"tensorboard": {
@@ -345,6 +359,13 @@
 					"default": "0",
 					"type": "int",
 					"required": true
+				},
+				"transfer_learning": {
+					"name": "Transfer Learning",
+					"default": false,
+					"type": "checkbox",
+					"required": false,
+					"url": "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/pre_trained_models/iCE40_human_detection.zip"
 				}
 			},
 			"tensorboard": {
@@ -447,6 +468,13 @@
 					"default": "0",
 					"type": "int",
 					"required": true
+				},
+				"transfer_learning": {
+					"name": "Transfer Learning",
+					"default": false,
+					"type": "checkbox",
+					"required": false,
+					"url": "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/pre_trained_models/iCE40_human_detection_2.zip"
 				}
 			},
 			"tensorboard": {
@@ -642,6 +670,13 @@
 					"type": "dir",
 					"sub_type": "artefacts",
 					"required": true
+				},
+				"transfer_learning": {
+					"name": "Transfer Learning",
+					"default": false,
+					"type": "checkbox",
+					"required": false,
+					"url": "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/pre_trained_models/iCE40_keyphrase_filter.zip"
 				}
 			},
 			"keyword_training": {
@@ -785,6 +820,13 @@
 					"default": "",
 					"type": "flag",
 					"required": true
+				},
+				"transfer_learning": {
+					"name": "Transfer Learning",
+					"default": false,
+					"type": "checkbox",
+					"required": false,
+					"url": "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/pre_trained_models/iCE40_keyphrase_keyword.zip"
 				}
 			},
 			"tensorboard": {
@@ -991,6 +1033,13 @@
 					"default": "0",
 					"type": "int",
 					"required": true
+				},
+				"transfer_learning": {
+					"name": "Transfer Learning",
+					"default": false,
+					"type": "checkbox",
+					"required": false,
+					"url": "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/pre_trained_models/ecp5_resnet_sqdet_human_count.zip"
 				}
 			},
 			"tensorboard": {
@@ -1116,6 +1165,13 @@
 					"default": "0",
 					"type": "int",
 					"required": true
+				},
+				"transfer_learning": {
+					"name": "Transfer Learning",
+					"default": false,
+					"type": "checkbox",
+					"required": false,
+					"url": "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/pre_trained_models/ecp5_mv2_sqdet_human_count.zip"
 				}
 			},
 			"tensorboard": {
@@ -1247,6 +1303,13 @@
 					"default": "0",
 					"type": "int",
 					"required": true
+				},
+				"transfer_learning": {
+					"name": "Transfer Learning",
+					"default": false,
+					"type": "checkbox",
+					"required": false,
+					"url": "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/pre_trained_models/cnx_vgg_sqdet_human_count.zip"
 				}
 			},
 			"tensorboard": {
