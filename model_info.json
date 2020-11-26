@@ -144,6 +144,11 @@
 					"required": true
 				}
 			}
+		},
+		"SensAI": {
+			"device": "ECP5",
+			"collapse_layer": 1,
+			"scale": 0.0078125
 		}
 	},
 	{
@@ -277,6 +282,12 @@
 					"required": true
 				}
 			}
+		},
+		"SensAI": {
+			"device": "ECP5",
+			"mobilenet_mode": 1,
+			"collapse_layer": 1,
+			"scale": 0.0078125
 		}
 	},
 	{
@@ -386,6 +397,10 @@
 					"required": true
 				}
 			}
+		},
+		"SensAI": {
+			"device": "Ultra Plus",
+			"scale": 1.0
 		}
 	},
 	{
@@ -1083,6 +1098,11 @@
 					"required": true
 				}
 			}
+		},
+		"SensAI": {
+			"device": "ECP5",
+			"collapse_layer": 1,
+			"scale": 0.0078125
 		}
 	},
 	{
