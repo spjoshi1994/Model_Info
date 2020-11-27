@@ -148,7 +148,8 @@
 				},
 				"required_output_depth_range": {
 					"name": "Required output depth range",
-					"type": "str"
+					"type": "str",
+					"default": ''
 				}
 			},
 			"CrossLink-NX": {
@@ -164,7 +165,8 @@
 				},
 				"required_output_depth_range": {
 					"name": "Required output depth range",
-					"type": "str"
+					"type": "str",
+					"default": ''
 				},
 				"crosslink_data_base_addr": {
 					"name": "Data Section Base address",
