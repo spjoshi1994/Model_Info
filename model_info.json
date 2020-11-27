@@ -537,7 +537,8 @@
 		},
 		"SensAI": {
 			"device": "Ultra Plus",
-			"scale": 0.0078125
+			"scale": 0.0078125,
+			"required_output_depth_range": "7-13"
 		}
 	},
 	{
@@ -1377,7 +1378,7 @@
 		"SensAI": {
 			"device": "CrossLink-NX",
 			"scale": 0.0078125,
-			"collapse_layer": 1
+			"required_output_depth_range": "7-41"
 		}
 	},
 	{
