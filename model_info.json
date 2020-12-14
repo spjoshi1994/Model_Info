@@ -588,7 +588,7 @@
 				},
 				"no_prefilter_bias": {
 					"default": "",
-					"type": "flag",
+					"type": "checkbox",
 					"required": true
 				},
 				"clip_duration_ms": {
@@ -679,7 +679,7 @@
 					"name": "Dataset Download url",
 					"default": "''",
 					"type": "str",
-					"required": true
+					"required": false
 				},
 				"summaries_dir": {
 					"name": "Eventfile Path",
