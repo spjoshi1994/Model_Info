@@ -807,12 +807,6 @@
 					"type": "str",
 					"required": true
 				},
-				"data_url": {
-					"name": "Dataset Download url",
-					"default": "''",
-					"type": "str",
-					"required": true
-				},
 				"summaries_dir": {
 					"name": "Eventfile Path",
 					"type": "dir",
