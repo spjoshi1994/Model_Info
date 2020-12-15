@@ -588,7 +588,8 @@
 				},
 				"no_prefilter_bias": {
 					"default": true,
-					"type": "flag"
+					"type": "flag",
+					"required": true
 				},
 				"clip_duration_ms": {
 					"default": "1040",
