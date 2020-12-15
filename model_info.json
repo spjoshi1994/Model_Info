@@ -588,7 +588,7 @@
 				},
 				"no_prefilter_bias": {
 					"default": "",
-					"type": "checkbox",
+					"type": "flag",
 					"required": true
 				},
 				"clip_duration_ms": {
