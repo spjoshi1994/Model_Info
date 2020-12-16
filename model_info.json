@@ -719,7 +719,7 @@
 					"required": true
 				},
 				"no_prefilter_bias": {
-					"default": "",
+					"default": true,
 					"type": "flag",
 					"required": true
 				},
@@ -821,7 +821,7 @@
 					"required": true
 				},
 				"lock_prefilter": {
-					"default": "",
+					"default": true,
 					"type": "flag",
 					"required": true
 				},
@@ -879,7 +879,7 @@
 					"required": true
 				},
 				"no_prefilter_bias": {
-					"default": "",
+					"default": true,
 					"type": "flag",
 					"required": true
 				},
