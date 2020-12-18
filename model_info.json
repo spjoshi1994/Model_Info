@@ -816,8 +816,9 @@
 				},
 				"set_prefilter": {
 					"name": "Prefilter Checkpoint Path",
-					"type": "dir",
+					"type": "file",
 					"sub_type": "artefacts",
+					"editable": true,
 					"required": true
 				},
 				"lock_prefilter": {
