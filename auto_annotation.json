@@ -1,0 +1,10 @@
+[
+	{
+		"name" : "Model_1",
+		"command" : "python /inference.py --pb /model1.pb --input_images /lattice/datasets/<#datasetname> --mode image"
+	},
+	{
+		"name" : "Model_2",
+		"command" : "python /inference.py --pb /model2.pb --input_images /lattice/datasets/<#datasetname> --mode image"
+	}
+]
