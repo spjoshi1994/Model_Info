@@ -1,0 +1,15 @@
+{
+	"kitti" : {
+		"coco" : {
+			"command" : "python kitti-to-coco-json.py --images_path /lattice/dataset/#datasetname/training/images/ --labels_path /lattice/dataset/<#datasetname>/training/labels/"
+		},
+		"dummy" : {
+			"command" : "ls"
+		}
+	},
+	"voc" : {
+		"kitti" : {
+			"command" : "python voc_to_kitti.py --images_path /lattice/dataset/#datasetname/training/images/ --labels_path /lattice/dataset/<#datasetname>/training/labels/"
+		}
+	}
+}
