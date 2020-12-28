@@ -1,15 +1,18 @@
 {
 	"kitti" : {
 		"coco" : {
-			"command" : "python3 kitti-to-coco-json.py --images_path /lattice/dataset/#datasetname/training/images/ --labels_path /lattice/dataset/<#datasetname>/training/labels/"
+			"command" : "python3 kitti-to-coco-json.py --images_path /lattice/dataset/#datasetname/training/images/ --labels_path /lattice/dataset/<#datasetname>/training/labels/",
+			"image_url": "gcr.io/lattice-apps/ml-training:tf-1.14.0"
 		},
 		"dummy" : {
-			"command" : "ls"
+			"command" : "ls",
+			"image_url": "gcr.io/lattice-apps/ml-training:tf-1.14.0"
 		}
 	},
 	"voc" : {
 		"kitti" : {
-			"command" : "python3 voc_to_kitti.py --images_path /lattice/dataset/#datasetname/training/images/ --labels_path /lattice/dataset/<#datasetname>/training/labels/"
+			"command" : "python3 voc_to_kitti.py --images_path /lattice/dataset/#datasetname/training/images/ --labels_path /lattice/dataset/<#datasetname>/training/labels/",
+			"image_url": "gcr.io/lattice-apps/ml-training:tf-1.14.0"
 		}
 	}
 }

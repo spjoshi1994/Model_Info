@@ -1,10 +1,14 @@
 [
 	{
 		"name" : "Model_1",
-		"command" : "python3 /inference.py --pb /model1.pb --input_images /lattice/datasets/#datasetname/ --mode image"
+		"format": "KITTI",
+		"image_url": "gcr.io/lattice-apps/ml-training:tf-1.14.0",
+		"command" : "python3 /inference.py --pb /model1.pb --input_images /lattice/dataset/#datasetname/ --mode image; pushd /lattice/dataset/#datasetname; mkdir training; mkdir training/labels/; mkdir training/images; mkdir ImageSets; cp /inference_output/predictions/* training/labels/; mv *.{jpg,png} training/images/; popd"
 	},
 	{
-		"name" : "Model_2",
-		"command" : "python3 /inference.py --pb /model2.pb --input_images /lattice/datasets/#datasetname/ --mode image"
+		"name" : "Model_3",
+		"format": "KITTI",
+		"image_url": "gcr.io/lattice-apps/ml-training:tf-1.14.0",
+		"command" : "python3 /inference.py --pb /model2.pb --input_images /lattice/dataset/#datasetname/ --mode image; pushd /lattice/dataset/#datasetname; mkdir training; mkdir training/labels/; mkdir training/images; mkdir ImageSets; cp /inference_output/predictions/* training/labels/; mv *.{jpg,png} training/images/; popd"
 	}
 ]
