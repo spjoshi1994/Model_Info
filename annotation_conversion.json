@@ -7,12 +7,16 @@
 		"dummy" : {
 			"command" : "ls",
 			"image_url": "gcr.io/lattice-apps/ml-training:tf-1.14.0"
+		},
+		"voc" : {
+			"command" : "python3 vod_converter/vod_converter/main.py --from kitti --from-path /lattice/dataset/#datasetname --to voc --to-path /lattice/dataset/#datasetname",
+			"image_url": "latticesemi/ubuntu:latest"
 		}
 	},
 	"voc" : {
 		"kitti" : {
-			"command" : "python3 voc_to_kitti.py --images_path /lattice/dataset/#datasetname/training/images/ --labels_path /lattice/dataset/<#datasetname>/training/labels/",
-			"image_url": "gcr.io/lattice-apps/ml-training:tf-1.14.0"
+			"command" : "python3 vod_converter/vod_converter/main.py --from voc --from-path /lattice/dataset/#datasetname --to kitti --to-path /lattice/dataset/#datasetname",
+			"image_url": "latticesemi/ubuntu:latest"
 		}
 	}
 }
