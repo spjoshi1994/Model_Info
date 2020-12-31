@@ -3,7 +3,7 @@
 		"name": "SensAI Version",
 		"type": "dropdown",
 		"options": {
-			"v3.0": "gcr.io/lattice-apps/sensai:v3.0"
+			"v3.0": "latticesemi/sensai:v3.0"
 		},
 		"default": "v3.0",
 		"required": true
