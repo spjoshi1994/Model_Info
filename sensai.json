@@ -3,7 +3,8 @@
 		"name": "SensAI Version",
 		"type": "dropdown",
 		"options": {
-			"v3.0": "latticesemi/sensai:v3.0"
+			"v3.0": "latticesemi/sensai:v3.0",
+			"v3.1": "latticesemi/sensai:v3.1"
 		},
 		"default": "v3.0",
 		"required": true
@@ -177,6 +178,42 @@
 					"name": "Code Section Base address",
 					"type": "int",
 					"default": 0
+				},
+				"enable_dualcore": {
+					"name": "Dual Core Mode",
+					"type": "checkbox",
+					"options": {
+						"unchecked": 0,
+						"checked": 1
+					},
+					"default": "unchecked"
+				},
+				"hyper_ram": {
+					"name": "HyperRAM",
+					"type": "checkbox",
+					"options": {
+						"unchecked": 0,
+						"checked": 1
+					},
+					"default": "checked"
+				},
+				"load_from_extmem": {
+					"name": "Store Input",
+					"type": "checkbox",
+					"options": {
+						"unchecked": 0,
+						"checked": 1
+					},
+					"default": "checked"
+				},
+				"store_to_extmem": {
+					"name": "Store Output",
+					"type": "checkbox",
+					"options": {
+						"unchecked": 0,
+						"checked": 1
+					},
+					"default": "unchecked"
 				}
 			}
 		}
