@@ -3,6 +3,6 @@
 		"name" : "Shoulder Surfing",
 		"format": "KITTI",
 		"image_url": "latticesemi/ml-training:tf-1.14.0",
-		"command" : "python3 /scripts/ss_inference.py --pb /scripts/shoulder_surfing.pb --input_images /lattice/dataset/#datasetname/ --mode image && pushd /lattice/dataset/#datasetname; mkdir training; mkdir training/labels/; mkdir training/images; mkdir ImageSets; cp /inference_output/predictions/* training/labels/; mv *.{jpg,png} training/images/; popd"
+		"command" : "cd /; python3 /scripts/ss_inference.py --pb /scripts/shoulder_surfing.pb --input_images /lattice/dataset/#datasetname/ --mode image && pushd /lattice/dataset/#datasetname && mkdir training && mkdir training/labels/ && mkdir training/images && mkdir ImageSets && cp /inference_output/predictions/* training/labels/ && [ ! -f *.jpeg ] || mv *.jpeg training/images/ && [ ! -f *.jpg ] || mv *.jpg training/images/ && [ ! -f *.png ] || mv *.png training/images/ && ls training/images/ | grep '.jpg\\|.jpeg\\|.png' | sed -E 's/.jpg|.jpeg|.png//' > ImageSets/train.txt; popd"
 	}
 ]
