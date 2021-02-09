@@ -120,9 +120,13 @@
 				},
 				"transfer_learning": {
 					"name": "Transfer Learning",
-					"default": false,
-					"type": "checkbox",
+					"type": "dropdown",
 					"required": false,
+					"options": {
+						"Lattice Github": "git_hub",
+						"Local": "local",
+						"From other Job": "other_job"
+					},
 					"url": "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/pre_trained_models/ecp5_vgg_sqdet_human_count.zip"
 				}
 			},
@@ -234,9 +238,13 @@
 				},
 				"transfer_learning": {
 					"name": "Transfer Learning",
-					"default": false,
-					"type": "checkbox",
+					"type": "dropdown",
 					"required": false,
+					"options": {
+						"Lattice Github": "git_hub",
+						"Local": "local",
+						"From other Job": "other_job"
+					},
 					"url": "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/pre_trained_models/ecp5_mv1_sqdet_human_count.zip"
 				}
 			},
@@ -373,9 +381,13 @@
 				},
 				"transfer_learning": {
 					"name": "Transfer Learning",
-					"default": false,
-					"type": "checkbox",
+					"type": "dropdown",
 					"required": false,
+					"options": {
+						"Lattice Github": "git_hub",
+						"Local": "local",
+						"From other Job": "other_job"
+					},
 					"url": "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/pre_trained_models/iCE40_human_detection.zip"
 				}
 			},
@@ -486,9 +498,13 @@
 				},
 				"transfer_learning": {
 					"name": "Transfer Learning",
-					"default": false,
-					"type": "checkbox",
+					"type": "dropdown",
 					"required": false,
+					"options": {
+						"Lattice Github": "git_hub",
+						"Local": "local",
+						"From other Job": "other_job"
+					},
 					"url": "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/pre_trained_models/iCE40_human_detection_2.zip"
 				}
 			},
@@ -683,9 +699,13 @@
 				},
 				"transfer_learning": {
 					"name": "Transfer Learning",
-					"default": false,
-					"type": "checkbox",
+					"type": "dropdown",
 					"required": false,
+					"options": {
+						"Lattice Github": "git_hub",
+						"Local": "local",
+						"From other Job": "other_job"
+					},
 					"url": "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/pre_trained_models/iCE40_keyphrase_filter.zip"
 				}
 			},
@@ -828,9 +848,13 @@
 				},
 				"transfer_learning": {
 					"name": "Transfer Learning",
-					"default": false,
-					"type": "checkbox",
+					"type": "dropdown",
 					"required": false,
+					"options": {
+						"Lattice Github": "git_hub",
+						"Local": "local",
+						"From other Job": "other_job"
+					},
 					"url": "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/pre_trained_models/iCE40_keyphrase_keyword.zip"
 				}
 			},
@@ -1041,9 +1065,13 @@
 				},
 				"transfer_learning": {
 					"name": "Transfer Learning",
-					"default": false,
-					"type": "checkbox",
+					"type": "dropdown",
 					"required": false,
+					"options": {
+						"Lattice Github": "git_hub",
+						"Local": "local",
+						"From other Job": "other_job"
+					},
 					"url": "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/pre_trained_models/ecp5_resnet_sqdet_human_count.zip"
 				}
 			},
@@ -1178,9 +1206,13 @@
 				},
 				"transfer_learning": {
 					"name": "Transfer Learning",
-					"default": false,
-					"type": "checkbox",
+					"type": "dropdown",
 					"required": false,
+					"options": {
+						"Lattice Github": "git_hub",
+						"Local": "local",
+						"From other Job": "other_job"
+					},
 					"url": "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/pre_trained_models/ecp5_mv2_sqdet_human_count.zip"
 				}
 			},
@@ -1316,9 +1348,13 @@
 				},
 				"transfer_learning": {
 					"name": "Transfer Learning",
-					"default": false,
-					"type": "checkbox",
+					"type": "dropdown",
 					"required": false,
+					"options": {
+						"Lattice Github": "git_hub",
+						"Local": "local",
+						"From other Job": "other_job"
+					},
 					"url": "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/pre_trained_models/cnx_vgg_sqdet_human_count.zip"
 				}
 			},
@@ -1453,9 +1489,13 @@
 				},
 				"transfer_learning": {
 					"name": "Transfer Learning",
-					"default": false,
-					"type": "checkbox",
+					"type": "dropdown",
 					"required": false,
+					"options": {
+						"Lattice Github": "git_hub",
+						"Local": "local",
+						"From other Job": "other_job"
+					},
 					"url": "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/pre_trained_models/cnx_mv1_sqdet_human_count.zip"
 				}
 			},
@@ -1592,9 +1632,13 @@
 				},
 				"transfer_learning": {
 					"name": "Transfer Learning",
-					"default": false,
-					"type": "checkbox",
+					"type": "dropdown",
 					"required": false,
+					"options": {
+						"Lattice Github": "git_hub",
+						"Local": "local",
+						"From other Job": "other_job"
+					},
 					"url": "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/pre_trained_models/cnx_mv1_sqdet_human_count.zip"
 				}
 			},
