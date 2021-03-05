@@ -1,0 +1,49 @@
+{
+	"image_url": "latticesemi/ubuntu:latest",
+	"command" : "python /scripts/dataset_augmentation.py",
+	"output_dimention" : {
+		"name": "Output Dimention",
+		"type": "str"
+	},
+	"pixel_shift" : {
+		"name": "Pixel Shift",
+		"type": "checkbox",
+		"default": true,
+		"options" : {
+			"pixel_shift_value" : {
+				"name" : "Pixel Shift Value",
+				"type": "int",
+				"default": "10"			
+			},
+			"pixel_shift_percentage" : {
+				"name" : "Augmentation Percentage",
+				"type": "int",
+				"default": "100"		
+			}
+		}
+	},
+	"brightness" : {
+		"name": "Brightness",
+		"type": "checkbox",
+		"default": true,
+		"options" : {
+			"brightness_percentage" : {
+				"name" : "Augmentation Percentage",
+				"type": "int",
+				"default": "100"		
+			}
+		}
+	},
+	"contrast" : {
+		"name": "contrast",
+		"type": "checkbox",
+		"default": true,
+		"options" : {
+			"contrast_percentage" : {
+				"name" : "Augmentation Percentage",
+				"type": "int",
+				"default": "100"		
+			}
+		}
+	}
+}
