@@ -1845,5 +1845,150 @@
 			"other_param": ""
 		},
 		"sections": {}
+	},
+
+	{
+		"model_name": "Human Count SSD MV2",
+		"git_url": "https://github.com/LatticeSemi/Human-Count.git -b Crosslink-NX-MV2-SSD",
+		"model_spec": {
+			"target_device": "Crosslink-NX",
+			"target_application": "Object Detection",
+			"target_class": "CNN",
+			"input_dim": "224x224",
+			"target_network": "SSD",
+			"target_framework": "TensorFlow",
+			"target_framework_version": "1.14.0",
+			"sensAI_version": "['V3.1']",
+			"dataset_type": "VOC",
+			"other_param": ""
+		},
+		"sections": {
+			"training": {
+				"_comment": "Optional parameter: This determines that whether train section is available or not.",
+				"command": {
+					"run_type": "python3"
+				},
+				"execution_script": {
+					"name": "Execution Script",
+					"default": "train.py",
+					"type": "file",
+					"required": true
+				},
+				"data-dir": {
+					"name": "Dataset Path",
+					"type": "dir",
+					"sub_type": "dataset",
+					"required": true
+				},
+				"name": {
+					"name": "Checkpoint Path",
+					"type": "dir",
+					"sub_type": "checkpoint",
+					"required": true
+				},
+				"epochs": {
+					"name": "Max Epochs",
+					"default": "1000",
+					"type": "int",
+					"required": true
+				},
+				"checkpoint-interval": {
+					"name": "Checkpoint Interval",
+					"default": "1",
+					"type": "int",
+					"required": true
+				},
+				"batch-size": {
+					"name": "Batch size",
+					"default": "8",
+					"type": "int",
+					"required": true
+				},
+				"lr-values": {
+					"name": "Learning-rate",
+					"default": "'0.001;0.0001;0.00001'",
+					"type": "str",
+					"required": true
+				},
+				"lr-boundaries": {
+					"name": "Learning-rate boundries",
+					"default": "'320000;400000'",
+					"type": "str",
+					"required": true
+
+				},
+				"momentum": {
+					"name": "momentum",
+					"default": "0.9",
+					"type": "float",
+					"required": true
+				},
+				"num-workers": {
+					"name": "number of workers",
+					"default": "1",
+					"type": "int",
+					"required": true
+				},
+				"transfer_learning": {
+					"name": "Transfer Learning",
+					"type": "dropdown",
+					"required": false,
+					"options": {
+						"Lattice Github": "git_hub",
+						"Local": "local",
+						"From other Job": "other_job"
+					},
+					"url": "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/pre_trained_models/cnx_mv2_ssd_human_count.zip"
+				}
+			},
+			"tensorboard": {
+				"_comment": "optional",
+				"command": {
+					"run_type": "tensorboard"
+				},
+				"logdir": {
+					"name": "Eventfile Path",
+					"type": "dir",
+					"sub_type": "artefacts",
+					"required": true
+				},
+				"port": {
+					"name": "Tensorboard Port",
+					"default": "6006",
+					"type": "int",
+					"required": true
+				}
+			},
+			"freeze": {
+				"_comment": "optional",
+				"command": {
+					"run_type": "python3"
+				},
+				"execution_script": {
+					"name": "Execution Script",
+					"default": "genpb.py",
+					"type": "file",
+					"required": true
+				},
+				"ckpt_dir": {
+					"name": "Checkpoint Path",
+					"type": "dir",
+					"sub_type": "artefacts",
+					"required": true
+				},
+				"freeze": {
+					"default": "",
+					"type": "flag",
+					"required": true
+				}
+			}
+		},
+		"SensAI": {
+			"device": "CrossLink-NX",
+			"scale": 0.0078125,
+			"hyperram": "checked",
+			"dual_core": "checked",
+			"required_output_depth_range": "7-41"
+		}
 	}
 ]
