@@ -1545,7 +1545,7 @@
 	},
 	{
 		"model_name": "Human Count Crosslink-NX-MV1-SqDet",
-		"git_url": "https://github.com/LatticeSemi/Human-Count.git -b Crosslink-NX-MV1-SqDet",
+		"git_url": "https://github.com/LatticeSemi/Human-Count.git -b Crosslink-NX-MV1-SqDet-layer-freezing",
 		"model_spec": {
 			"target_device": "Crosslink-NX",
 			"target_application": "Object Detection",
@@ -1634,6 +1634,22 @@
 						"From other Job": "other_job"
 					},
 					"url": "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/pre_trained_models/cnx_mv1_sqdet_human_count.zip"
+				},
+				"freeze_layers" : {
+					"name": "Freeze Layers",
+					"type": "checkboxes",
+					"options": {
+						"fire1": "fire1",
+						"fire2": "fire2",
+						"fire3": "fire3",
+						"fire4": "fire4",
+						"fire5": "fire5",
+						"fire6": "fire6",
+						"fire7": "fire7",
+						"conv12": "conv12"
+					},
+					"default": "",
+					"required": false
 				}
 			},
 			"tensorboard": {
