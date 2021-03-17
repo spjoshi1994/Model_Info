@@ -1,26 +1,9 @@
 {
 	"image_url": "latticesemi/ubuntu:latest",
-	"command" : "python3 /scripts/dataset_augmentation.py",
-	"output_dimention" : {
-		"name": "Output Dimention",
+	"command" : "python3 /scripts/dataset_augmentation.py --input /lattice/dataset/kitti/ --output /lattice/dataset/kitti/augment/",
+	"output_dimension" : {
+		"name": "Output Dimension",
 		"type": "str"
-	},
-	"pixel_shift" : {
-		"name": "Pixel Shift",
-		"type": "checkbox",
-		"default": true,
-		"options" : {
-			"pixel_shift_value" : {
-				"name" : "Pixel Shift Value",
-				"type": "int",
-				"default": "10"			
-			},
-			"pixel_shift_percentage" : {
-				"name" : "Augmentation Percentage",
-				"type": "int",
-				"default": "100"		
-			}
-		}
 	},
 	"brightness" : {
 		"name": "Brightness",
@@ -43,6 +26,23 @@
 				"name" : "Augmentation Percentage",
 				"type": "int",
 				"default": "100"		
+			}
+		}
+	},
+	"canvas_shift" : {
+		"name": "Canvas Shift",
+		"type": "checkbox",
+		"default": true,
+		"options" : {
+			"canvas_shift_percentage" : {
+				"name" : "Augmentation Percentage",
+				"type": "int",
+				"default": "100"		
+			},
+			"pixel_shift" : {
+				"name" : "Pixel shift value",
+				"type": "int",
+				"default": "10"		
 			}
 		}
 	}
