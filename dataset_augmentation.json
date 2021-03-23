@@ -3,6 +3,7 @@
 	"command" : "python3 /scripts/dataset_augmentation.py --input /lattice/dataset/#datasetname/ --output /lattice/dataset/#datasetname/augment/",
 	"output_dimension" : {
 		"name": "Output Dimension",
+		"default": "224,224",
 		"type": "str"
 	},
 	"brightness" : {
