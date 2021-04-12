@@ -13,10 +13,12 @@
 		"options" : {
 			"brightness_percentage" : {
 				"name" : "Augmentation Percentage",
-				"type": "int",
+				"type": "slider",
 				"default": "100",
 				"min": 0,
-				"max": 100		
+				"max": 100,
+				"step": 10
+
 			}
 		}
 	},
@@ -27,10 +29,11 @@
 		"options" : {
 			"contrast_percentage" : {
 				"name" : "Augmentation Percentage",
-				"type": "int",
+				"type": "slider",
 				"default": "100",
 				"min": 0,
-				"max": 100	
+				"max": 100,
+				"step": 10	
 						
 			}
 		}
@@ -42,10 +45,11 @@
 		"options" : {
 			"canvas_shift_percentage" : {
 				"name" : "Augmentation Percentage",
-				"type": "int",
+				"type": "slider",
 				"default": "100",
 				"min": 0,
-				"max": 100			
+				"max": 100,
+				"step": 10			
 			},
 			"pixel_shift" : {
 				"name" : "Pixel shift value",
