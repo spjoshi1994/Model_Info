@@ -4,15 +4,18 @@
 	"output_dimension" : {
 		"name": "Output Dimension",
 		"default": "224,224",
+		"info":"Dimension Width x Height",
 		"type": "str"
 	},
 	"brightness" : {
 		"name": "Brightness",
 		"type": "checkbox",
 		"default": true,
+		"info": "Images with increased brightness will be added in dataset with differnt brightness value",
+		"help_image": "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/augmentation_images/brightness.jpg",
 		"options" : {
 			"brightness_percentage" : {
-				"name" : "Augmentation Percentage",
+				"name" : "% images of total dataset",
 				"type": "slider",
 				"default": "100",
 				"min": 0,
@@ -26,9 +29,11 @@
 		"name": "contrast",
 		"type": "checkbox",
 		"default": true,
+		"info": "Images with increased contrast will be added in dataset with different contrast value",
+		"help_image" : "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/augmentation_images/contrast.jpg",
 		"options" : {
 			"contrast_percentage" : {
-				"name" : "Augmentation Percentage",
+				"name" : "% images of total dataset",
 				"type": "slider",
 				"default": "100",
 				"min": 0,
@@ -42,9 +47,11 @@
 		"name": "Canvas Shift",
 		"type": "checkbox",
 		"default": true,
+		"info": "Image will shift by X number of pixel (default 10px). Image with shifted canvas will be added in dataset",
+		"help_image" : "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/augmentation_images/canvas_shift.jpg",
 		"options" : {
 			"canvas_shift_percentage" : {
-				"name" : "Augmentation Percentage",
+				"name" : "% images of total dataset",
 				"type": "slider",
 				"default": "100",
 				"min": 0,
