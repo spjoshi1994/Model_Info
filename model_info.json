@@ -1839,7 +1839,7 @@
 						"Local": "local",
 						"From other Job": "other_job"
 					},
-					"url": "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/pre_trained_models/cnx_mv1_sqdet_human_count.zip"
+					"url": "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/pre_trained_models/cnx_mv2_sqdet_human_count.zip"
 				},
 				"freeze_layers" : {
 					"name": "Freeze Layers",
