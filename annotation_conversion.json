@@ -4,10 +4,6 @@
 			"command" : "python3 kitti-to-coco-json.py --images_path /lattice/dataset/#datasetname/training/images/ --labels_path /lattice/dataset/<#datasetname>/training/labels/",
 			"image_url": "gcr.io/lattice-apps/ml-training:tf-1.14.0"
 		},
-		"dummy" : {
-			"command" : "ls",
-			"image_url": "gcr.io/lattice-apps/ml-training:tf-1.14.0"
-		},
 		"voc" : {
 			"command" : "python3 vod_converter/vod_converter/main.py --from kitti --from-path /lattice/dataset/#datasetname --to voc --to-path /lattice/dataset/#datasetname",
 			"image_url": "latticesemi/ubuntu:latest"
@@ -17,6 +13,12 @@
 		"kitti" : {
 			"command" : "python3 vod_converter/vod_converter/main.py --from voc --from-path /lattice/dataset/#datasetname --to kitti --to-path /lattice/dataset/#datasetname",
 			"image_url": "latticesemi/ubuntu:latest"
+		}
+	},
+	"classification" : {
+		"tfrecord" : {
+			"command" : "python3 /scripts/tfrecord-gen.py -i /lattice/dataset/#datasetname -o temp && rm -rf /lattice/dataset/#datasetname/* && mv temp/* /lattice/dataset/#datasetname/",
+			"image_url": "latticesemi/ml-training:tf-1.15.0"
 		}
 	}
 }
