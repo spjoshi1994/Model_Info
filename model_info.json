@@ -2067,5 +2067,169 @@
 			"dual_core": "checked",
 			"required_output_depth_range": "7-41"
 		}
+	},
+	{
+		"model_name": "Human Count Crosslink-NX-TinyYolov2",
+		"git_url": "https://github.com/LatticeSemi/Human-Count.git -b Crosslink-NX-TinyYolov2",
+		"model_spec": {
+			"target_device": "Crosslink-NX",
+			"target_application": "Object Detection",
+			"target_class": "CNN",
+			"input_dim": "224x224",
+			"target_network": "tinyyolo",
+			"target_framework": "TensorFlow",
+			"target_framework_version": "1.14.0",
+			"sensAI_version": "['V3.0','V3.1','V4.0']",
+			"dataset_type": "KITTI",
+			"other_param": ""
+		},
+		"sections": {
+			"training": {
+				"_comment": "Optional parameter: This determines that whether train section is available or not.",
+				"command": {
+					"run_type": "python3"
+				},
+				"execution_script": {
+					"name": "Execution Script",
+					"default": "src/train.py",
+					"type": "file",
+					"required": true
+				},
+				"Model Matrices": {
+					"step:loss": "step (\\d+), loss = (\\d+.\\d+)",
+					"conf_loss": "conf_loss: (\\d+.\\d+)",
+					"bbox_loss": "bbox_loss: (\\d+.\\d+)",
+					"class_loss": "class_loss: (\\d+.\\d+)"
+				},
+				"dataset": {
+					"name": "Dataset Type",
+					"default": "KITTI",
+					"type": "str",
+					"required": true
+				},
+				"net": {
+					"name": "Architecture",
+					"default": "tinyyolo",
+					"type": "str",
+					"required": true
+				},
+				"data_path": {
+					"name": "Dataset Path",
+					"type": "dir",
+					"sub_type": "dataset",
+					"required": true
+				},
+				"train_dir": {
+					"name": "Checkpoint Path",
+					"type": "dir",
+					"sub_type": "checkpoint",
+					"required": true
+				},
+				"image_set": {
+					"name": "Image Set",
+					"default": "train",
+					"type": "str",
+					"required": true
+				},
+				"summary_step": {
+					"name": "Summary Steps",
+					"default": "100",
+					"type": "int",
+					"required": true
+				},
+				"max_steps": {
+					"name": "Max Steps",
+					"default": "250000",
+					"type": "int",
+					"required": true
+				},
+				"checkpoint_step": {
+					"name": "Checkpoint Interval",
+					"default": "1000",
+					"type": "int",
+					"required": true
+				},
+				"gpu": {
+					"name": "Visible GPUs",
+					"default": "0",
+					"type": "int",
+					"required": true
+				},
+				"transfer_learning": {
+					"name": "Transfer Learning",
+					"type": "dropdown",
+					"required": false,
+					"options": {
+						"Lattice Github": "git_hub",
+						"Local": "local",
+						"From other Job": "other_job"
+					},
+					"url": ""
+				},
+				"freeze_layers" : {
+					"name": "Freeze Layers",
+					"type": "checkboxes",
+					"options": {
+						"conv1": "conv1",
+						"conv2": "conv2",
+						"conv3": "conv3",
+						"conv4": "conv4",
+						"conv5": "conv5",
+						"conv6": "conv6",
+						"conv12": "conv12"
+					},
+					"default": "",
+					"required": false
+				}
+			},
+			"tensorboard": {
+				"_comment": "optional",
+				"command": {
+					"run_type": "tensorboard"
+				},
+				"logdir": {
+					"name": "Eventfile Path",
+					"type": "dir",
+					"sub_type": "artefacts",
+					"required": true
+				},
+				"port": {
+					"name": "Tensorboard Port",
+					"default": "6006",
+					"type": "int",
+					"required": true
+				}
+			},
+			"freeze": {
+				"_comment": "optional",
+				"command": {
+					"run_type": "python3"
+				},
+				"execution_script": {
+					"name": "Execution Script",
+					"default": "src/genpb.py",
+					"type": "file",
+					"required": true
+				},
+				"ckpt_dir": {
+					"name": "Checkpoint Path",
+					"type": "dir",
+					"sub_type": "artefacts",
+					"required": true
+				},
+				"freeze": {
+					"default": "",
+					"type": "flag",
+					"required": true
+				}
+			}
+		},
+		"SensAI": {
+			"device": "CrossLink-NX",
+			"scale": 0.0078125,
+			"hyperram": "checked",
+			"dual_core": "checked",
+			"required_output_depth_range": "7-41"
+		}
 	}
 ]
