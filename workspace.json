@@ -37,6 +37,23 @@
 },
 
 {
+	"name": "Tensorflow 2.3.0",
+	"url": "latticesemi/ml-training:tf-2.3.0",
+	"default": true,
+	"description": "Tensorflow 2.3.0",
+	"framework": "TensorFlow",
+	"framework_version": "2.3.0",
+	"packages": [
+		"tensorflow-gpu=2.3.0",
+		"tensorboard=2.0.0",
+		"python3-opencv"
+	 ]
+},
+
+
+
+
+{
 	"name": "Tensorflow 2.0.0",
 	"url": "latticesemi/ml-training:tf-2.0.0",
 	"default": false,
