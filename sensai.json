@@ -4,9 +4,10 @@
         "type":"dropdown",
         "options":{
             "v3.0":"latticesemi/sensai:v3.0",
-            "v3.1":"latticesemi/sensai:v3.1"
+            "v3.1":"latticesemi/sensai:v3.1",
+            "v4.0":"latticesemi/sensai:v4.0"
         },
-        "default":"v3.0",
+        "default":"v4.0",
         "required":true
     },
     "sensai_options":{
@@ -115,7 +116,7 @@
                         "checked":1
                     },
                     "default":"unchecked",
-                    "version":["v3.0","v3.1"]
+                    "version":["v3.0","v3.1","v4.0"]
                 },
                 "collapse_layer":{
                     "name":"Collpase",
@@ -125,20 +126,20 @@
                         "checked":1
                     },
                     "default":"checked",
-                    "version":["v3.0","v3.1"]
+                    "version":["v3.0","v3.1","v4.0"]
                 },
                 "scale":{
                     "name":"Scale",
                     "type":"float",
                     "default":1.0,
-                    "version":["v3.0","v3.1"]
+                    "version":["v3.0","v3.1","v4.0"]
                 },
 
                 "mean":{
                     "name":"Mean",
                     "type":"float",
                     "default":0,
-                    "version":["v3.0","v3.1"]
+                    "version":["v3.0","v3.1","v4.0"]
                 },
                 "load_from_extmem":{
                     "name":"Store Input",
@@ -148,7 +149,7 @@
                         "checked":1
                     },
                     "default":"checked",
-                    "version":["v3.1"]
+                    "version":["v3.1","v4.0"]
                 },
                 "store_to_extmem":{
                     "name":"Store Output",
@@ -158,7 +159,7 @@
                         "checked":1
                     },
                     "default":"unchecked",
-                    "version":["v3.1"]
+                    "version":["v3.1","v4.0"]
                 }
             },
             "Ultra Plus":{
@@ -166,19 +167,19 @@
                     "name":"Scale",
                     "type":"float",
                     "default":1.0,
-                    "version":["v3.0","v3.1"]
+                    "version":["v3.0","v3.1","v4.0"]
                 },
                 "mean":{
                     "name":"Mean",
                     "type":"float",
                     "default":0,
-                    "version":["v3.0","v3.1"]
+                    "version":["v3.0","v3.1","v4.0"]
                 },
                 "required_output_depth_range":{
                     "name":"Required output depth range",
                     "type":"str",
                     "default":"",
-                    "version":["v3.0","v3.1"]
+                    "version":["v3.0","v3.1","v4.0"]
                 },
                 "ebr_blk_size":{
                     "name":"On-chip Memory Block Size(16K/32K/64K/)",
@@ -189,7 +190,7 @@
                         "65536":"65536"
                     },
                     "default":"16384",
-                    "version":["v3.0","v3.1"]
+                    "version":["v3.0","v3.1","v4.0"]
                 },
                 "conv1x1_mode":{
                     "name":"conv1x1 mode",
@@ -200,7 +201,7 @@
                         "Quad":"quad"
                     },
                     "default":"Single",
-                    "version":["v3.1"]
+                    "version":["v3.1","v4.0"]
                 },
                 "otf_post_processing":{
                     "name":"On-the-fly post processing",
@@ -210,7 +211,7 @@
                         "checked":1
                     },
                     "default":"unchecked",
-                    "version":["v3.1"]
+                    "version":["v3.1","v4.0"]
                 }
             },
             "CrossLink-NX":{
@@ -218,31 +219,31 @@
                     "name":"Scale",
                     "type":"float",
                     "default":0.0078125,
-                    "version":["v3.0","v3.1"]
+                    "version":["v3.0","v3.1","v4.0"]
                 },
                 "mean":{
                     "name":"Mean",
                     "type":"float",
                     "default":0,
-                    "version":["v3.0","v3.1"]
+                    "version":["v3.0","v3.1","v4.0"]
                 },
                 "required_output_depth_range":{
                     "name":"Required output depth range",
                     "type":"str",
                     "default":"",
-                    "version":["v3.0","v3.1"]
+                    "version":["v3.0","v3.1","v4.0"]
                 },
                 "crosslink_data_base_addr":{
                     "name":"Data Section Base address",
                     "type":"int",
                     "default":4194304,
-                    "version":["v3.0","v3.1"]
+                    "version":["v3.0","v3.1","v4.0"]
                 },
                 "crosslink_code_base_addr":{
                     "name":"Code Section Base address",
                     "type":"int",
                     "default":0,
-                    "version":["v3.0","v3.1"]
+                    "version":["v3.0","v3.1","v4.0"]
                 },
                 "enable_dualcore":{
                     "name":"Dual Core Mode",
@@ -252,7 +253,7 @@
                         "checked":1
                     },
                     "default":"unchecked",
-                    "version":["v3.1"]
+                    "version":["v3.1","v4.0"]
                 },
                 "hyper_ram":{
                     "name":"HyperRAM",
@@ -262,7 +263,7 @@
                         "checked":1
                     },
                     "default":"checked",
-                    "version":["v3.0","v3.1"]
+                    "version":["v3.0","v3.1","v4.0"]
                 },
                 "load_from_extmem":{
                     "name":"Store Input",
@@ -272,7 +273,7 @@
                         "checked":1
                     },
                     "default":"checked",
-                    "version":["v3.1"]
+                    "version":["v3.1","v4.0"]
                 },
                 "store_to_extmem":{
                     "name":"Store Output",
@@ -282,13 +283,13 @@
                         "checked":1
                     },
                     "default":"unchecked",
-                    "version":["v3.1"]
+                    "version":["v3.1","v4.0"]
                 },
                 "cross_link_external_mem_size":{
                     "name":"External memory interfaced",
                     "type":"int",
                     "default":8388608,
-                    "version":["v3.0","v3.1"]
+                    "version":["v3.0","v3.1","v4.0"]
                 },
                 "otf_post_processing":{
                     "name":"On-the-fly post processing",
@@ -298,7 +299,7 @@
                         "checked":1
                     },
                     "default":"unchecked",
-                    "version":["v3.2"]
+                    "version":["v4.0"]
                 }
             }
         }
