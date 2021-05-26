@@ -90,7 +90,7 @@
                     "required":"true",
                     "extenstions":"h5"
                 },
-                "input_file":{
+                "image_files":{
                     "name":"Input image",
                     "type":"file_upload",
                     "required":"true",
