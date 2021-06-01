@@ -37,6 +37,182 @@
 			}
 		}
 	},
+
+	{
+		"model_name": "QVGA",
+		"git_url": "https://github.com/LatticeSemi/Human-Count.git -b Crosslink-NX-QVGA",
+		"model_spec": {
+			"target_device": "ECP5",
+			"target_application": "Object Detection",
+			"target_class": "CNN",
+			"input_dim": "320x240",
+			"target_network": "SqueezeDet",
+			"target_framework": "TensorFlow",
+			"target_framework_version": "1.15.0",
+			"sensAI_version": "['V2.0.0', 'V2.1.0-Beta', 'V3.0', 'V3.1', 'V4.0']",
+			"dataset_type": "KITTI",
+			"other_param": ""
+		},
+		"sections": {
+			"training": {
+				"_comment": " Optional parameter: This determines that whether train section is available or not.",
+				"command": {
+					"run_type": "python3"
+				},
+				"execution_script": {
+					"name": "Execution Script",
+					"default": "train_and_prune.py",
+					"type": "file",
+					"required": true
+				},
+				"dataset": {
+					"name": "Dataset Type",
+					"default": "KITTI",
+					"type": "str",
+					"required": true
+				},
+				
+				"dataset_path": {
+					"name": "Dataset Path",
+					"type": "dir",
+					"sub_type": "dataset",
+					"required": true
+				},
+				
+				"gpuid": {
+					"name": "Visible GPUs",
+					"default": "0",
+					"type": "int",
+					"required": true
+				},
+				"logdir":{
+					"name": "Checkpoint Path",
+					"type": "dir",
+					"sub_type": "checkpoint",
+					"required": true
+				},
+				"val_set_size":{
+						"name": "val_set_size",
+						"default": "10",
+						"type": "int",
+						"required": true
+
+					},
+				
+				"gray": {
+                    "name": "gray",
+                    "type": "flag",
+                    "default": true
+                    },
+                    
+                    
+				"validation_freq":{
+						"name": "validation_freq",
+						"default": "10",
+						"type": "int",
+						"required": true
+
+					},
+
+				"runpruning":{
+						"name": "pruning",
+                        "type": "flag",
+                        "default": true
+                    
+                    },
+                   
+				"early_pooling ":{
+						"name": "pooling",
+                        "type": "flag",
+                        "default": false
+                    },
+				"filterdepths":{
+						"name": "filterdepths",
+						"default": "32,32,32,64,64,128,128",
+						"type": "str",
+						"required": true
+
+					},
+
+				"sparsity":{
+						"name": "sparsity",
+						"default": "0.25,0.25,0.35,0.35,0.45,0.45",
+						"type": "str",
+						"required": true
+
+					},
+				"epochs": {
+						"name": "epochs",
+						"default": "110,10,50",
+						"type": "str",
+						"required": true
+
+					},
+					
+				"usedefaultvalset": {
+					"name": "default val set",
+					"type": "flag",
+                    "default": true
+
+				},
+
+				"freeze_landmark": {
+					"name": "freeze landmark",
+					"default": "None",
+					"type": "str",
+					"required": true
+
+				},
+
+				"usecov3": {
+					"name": "usecov3",
+					"type": "flag",
+                    "default": true
+
+				},
+
+				"transfer_learning": {
+					"name": "Transfer Learning",
+					"type": "dropdown",
+					"required": false,
+					"options": {
+						"Lattice Github": "git_hub",
+						"Local": "local",
+						"From other Job": "other_job"
+					},
+					"url": "https://raw.githubusercontent.com/shubham294/checkpoints/master/train.zip"
+				}
+			},
+			"tensorboard": {
+				"command": {
+					"run_type": "tensorboard"
+				},
+				"logdir": {
+					"name": "Eventfile Path",
+					"type": "dir",
+					"sub_type": "artefacts",
+					"selector": "training.train_dir",
+					"required": true
+				},
+				"port": {
+					"name": "Tensorboard Port",
+					"default": "6006",
+					"type": "int",
+					"required": true
+				}
+			}
+		},
+
+		"SensAI": {
+			"device": "CrossLink-NX",
+			"scale": 0.0078125,
+			"hyperram": "checked",
+			"dual_core": "checked",
+			"required_output_depth_range": "7-41"
+		}
+
+	},
+	
 	{
 		"model_name": "Human Count",
 		"git_url": "https://github.com/LatticeSemi/Human-Count.git -b 2.0",
