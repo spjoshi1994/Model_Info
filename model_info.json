@@ -42,14 +42,14 @@
 		"model_name": "QVGA",
 		"git_url": "https://github.com/LatticeSemi/Human-Count.git -b Crosslink-NX-QVGA",
 		"model_spec": {
-			"target_device": "ECP5",
+			"target_device": "Crosslink-NX",
 			"target_application": "Object Detection",
 			"target_class": "CNN",
 			"input_dim": "320x240",
 			"target_network": "SqueezeDet",
 			"target_framework": "TensorFlow",
 			"target_framework_version": "1.15.0",
-			"sensAI_version": "['V2.0.0', 'V2.1.0-Beta', 'V3.0', 'V3.1', 'V4.0']",
+			"sensAI_version": "['V4.0']",
 			"dataset_type": "KITTI",
 			"other_param": ""
 		},
@@ -212,7 +212,7 @@
 		}
 
 	},
-	
+
 	{
 		"model_name": "Human Count",
 		"git_url": "https://github.com/LatticeSemi/Human-Count.git -b 2.0",
