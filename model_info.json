@@ -37,6 +37,232 @@
 			}
 		}
 	},
+    {
+		"model_name": "Predictive Maintenance Certus-NX",
+		"git_url": "https://github.com/LatticeSemi/Predictive-Maintenance.git -b Certus-NX-Predictive-Maintenance",
+		"model_spec": {
+			"target_device": "Certus-NX",
+			"target_application": "Predictive Maintenance",
+			"target_class": "CNN",
+			"input_dim": "64x64",
+			"target_network": "SqueezeDet",
+			"target_framework": "TensorFlow",
+			"target_framework_version": "1.15.0",
+			"dataset_type": "signlang",
+			"other_param": ""
+		},
+		"sections": {
+			"training": {
+				"_comment": " Optional parameter: This determines that whether train section is available or not.",
+				"command": {
+					"run_type": "python3"
+				},
+				"execution_script": {
+					"name": "Execution Script",
+					"default": "resnet_main.py",
+					"type": "file",
+					"required": true
+				},
+				"dataset": {
+					"name": "Dataset Type",
+					"default": "signlang",
+					"type": "str",
+					"required": true
+				},
+				"train_data_path": {
+					"name": "Dataset Path",
+					"type": "dir",
+					"sub_type": "dataset",
+					"required": true
+				},
+				"train_dir": {
+					"name": "Checkpoint Path",
+					"type": "dir",
+					"sub_type": "checkpoint",
+					"required": true
+				},
+                "gray": {
+					"name": "gray",
+					"default": "True",
+					"type": "str",
+					"required": true
+				},
+				"log_root": {
+					"name": "log directory",
+					"type": "dir",
+					"sub_type":"artefacts",
+					"required": true
+				},
+				"image_size": {
+					"name": "Image size",
+					"default": "64",
+					"type": "int",
+					"required": true
+				},
+				"maxsteps": {
+					"name": "Max Steps",
+					"default": "100000",
+					"type": "int",
+					"required": true
+				},
+				"ckptinterval": {
+					"name": "Checkpoint Interval",
+					"default": "1000",
+					"type": "int",
+					"required": true
+				},
+				"num_gpus": {
+					"name": "Visible GPUs",
+					"default": "0",
+					"type": "int",
+					"required": true
+				},
+				"transfer_learning": {
+					"name": "Transfer Learning",
+					"type": "dropdown",
+					"required": false,
+					"options": {
+						"Lattice Github": "git_hub",
+						"Local": "local",
+						"From other Job": "other_job"
+					},
+					"url": "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/pre_trained_models/ecp5_mv1_sqdet_human_count.zip"
+				}
+			},
+			"tensorboard": {
+				"command": {
+					"run_type": "tensorboard"
+				},
+				"logdir": {
+					"name": "Eventfile Path",
+					"type": "dir",
+					"sub_type": "artefacts",
+					"selector": "training.train_dir",
+					"required": true
+				},
+				"port": {
+					"name": "Tensorboard Port",
+					"default": "6006",
+					"type": "int",
+					"required": true
+				}
+			},
+			"freeze": {
+				"_comment": " Optional parameter: This determines that whether freeze part is available or not.",
+				"command": {
+					"run_type": "python3"
+				},
+				"execution_script": {
+					"name": "Execution Script",
+					"default": "genpb.py",
+					"type": "file",
+					"required": true
+				},
+				"ckpt_dir": {
+					"name": "Checkpoint Path",
+					"type": "dir",
+					"sub_type": "artefacts",
+					"selector": "training.train_dir",
+					"required": true
+				},
+				"freeze": {
+					"default": "",
+					"type": "flag",
+					"required": true	
+				}
+			},
+			"generate_tflite": {
+				"_comment": " Optional parameter: This determines that whether freeze part is available or not.",
+				"command": {
+					"run_type": "python3"
+				},
+				"workspace":{
+					"name": "workspace",
+					"type":"workspace"
+				},
+				"execution_script": {
+					"name": "Execution Script",
+					"default": "gen_tflite_and_quant.py",
+					"type": "file",
+					"required": true
+				},
+				"input_path": {
+					"name": "Sample images path",
+					"type": "dir",
+					"sub_type" : "dataset",
+					"required": true
+				},
+				"tflite_path": {
+					"name": "Model Path",
+					"type": "dir",
+					"sub_type":"artefacts",
+					"default":"/predictive_maintenance.tflite",
+					"required": true
+				},
+				"pb":{
+					"name": "Frozen graph file",
+					"type": "file",
+					"extensions": "pb",
+					"required": true
+				}
+			},
+			"evaluate_tflite": {
+				"command": {
+					"run_type": "python3"
+				},
+				"execution_script": {
+					"name": "Execution Script",
+					"default": "evaluate_tflite.py",
+					"type": "file",
+					"required": true
+				},
+				"workspace":{
+					"name": "workspace",
+					"type":"workspace"
+				},
+				"dataset_path": {
+					"name": "Sample images path",
+					"type": "dir",
+					"sub_type" : "dataset",
+					"required": true
+				},
+				"tflite_path": {
+					"name": "tflite file",
+					"type": "file",
+					"extensions":"tflite",
+					"required": true
+				}
+			},
+			"output_c_array": {
+				"command": {
+					"run_type": "python3"
+				},
+				"execution_script": {
+                    "name": "Execution Script",
+                    "default": "convert_to_c_array.py",
+                    "type": "file",
+                    "required": true
+                },
+                "workspace":{
+					"name": "workspace",
+					"type":"workspace"
+				},
+                "tflite_path": {
+                    "name": "tflite file",
+                    "type": "file",
+                    "extensions":"tflite",
+                    "required": true
+                },
+                "output_file": {
+                    "name": "Output File",
+					"type": "dir",
+					"sub_type":"artefacts",
+					"default":"/predictive_maintenance.cc",
+					"required": true
+                }
+            }
+		}
+	},	
 
 	{
 		"model_name": "Human Presence CrosslinkNX-VnV-RiscV",
