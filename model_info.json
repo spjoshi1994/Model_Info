@@ -126,7 +126,7 @@
 						"Local": "local",
 						"From other Job": "other_job"
 					},
-					"url": "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/pre_trained_models/Certus_NX_predictive_maintenance.zip.zip"
+					"url": "https://raw.githubusercontent.com/LatticeSemi/Model_Info/dev/pre_trained_models/Certus_NX_predictive_maintenance.zip"
 				}
 			},
 			"tensorboard": {
