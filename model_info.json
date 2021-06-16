@@ -66,60 +66,70 @@
 				"dataset": {
 					"name": "Dataset Type",
 					"default": "signlang",
+					"info":"signlang only supported",
 					"type": "str",
 					"required": true
 				},
 				"train_data_path": {
 					"name": "Dataset Path",
 					"type": "dir",
+					"info":"Path to claasification dataset",
 					"sub_type": "dataset",
 					"required": true
 				},
 				"train_dir": {
 					"name": "Checkpoint Path",
 					"type": "dir",
+					"info":"Directory to save the checkpoints",
 					"sub_type": "checkpoint",
 					"required": true
 				},
                 "gray": {
 					"name": "gray",
 					"default": "True",
+					"info":"Train model on grayscale or BGR images",
 					"type": "str",
 					"required": true
 				},
 				"log_root": {
 					"name": "log directory",
 					"type": "dir",
+					"info":"root directory for logs",
 					"sub_type":"artefacts",
 					"required": true
 				},
 				"image_size": {
 					"name": "Image size",
 					"default": "64",
+					"info":"Training image size",
 					"type": "int",
 					"required": true
 				},
 				"maxsteps": {
 					"name": "Max Steps",
 					"default": "100000",
+					"info":"Max number of iterations for training",
 					"type": "int",
 					"required": true
 				},
 				"ckptinterval": {
 					"name": "Checkpoint Interval",
 					"default": "1000",
+					"info":"Number of iterations for saving checkpoint",
 					"type": "int",
 					"required": true
 				},
 				"num_gpus": {
 					"name": "Visible GPUs",
 					"default": "0",
+					"info":"Gpu to use for training",
 					"type": "int",
 					"required": true
 				},
 				"transfer_learning": {
 					"name": "Transfer Learning",
 					"type": "dropdown",
+					"info":"Pretrained model,keep the number of iterations greater than 100000 to finetune",
 					"required": false,
 					"options": {
 						"Lattice Github": "git_hub",
@@ -217,21 +227,24 @@
 					"required": true
 				},
 				"workspace":{
-					"name": "workspace",
-					"type":"workspace"
-				},
-				"dataset_path": {
-					"name": "Sample images path",
-					"type": "dir",
-					"sub_type" : "dataset",
-					"required": true
-				},
-				"tflite_path": {
-					"name": "tflite file",
-					"type": "file",
-					"extensions":"tflite",
-					"required": true
-				}
+                    "name": "workspace",
+                    "info": "Select workspace with TF2.2 CPU",
+                    "type":"workspace"
+                },
+                "dataset_path": {
+                    "name": "Sample images path",
+                    "info": "Dataset in classification format",
+                    "type": "dir",
+                    "sub_type" : "dataset",
+                    "required": true
+                },
+                "tflite_path": {
+                    "name": "tflite file",
+                    "info": "Path to Tensorflow Lite model",
+                    "type": "file",
+                    "extensions":"tflite",
+                    "required": true
+                }
 			},
 			"output_c_array": {
 				"command": {
