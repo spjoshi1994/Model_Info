@@ -637,6 +637,53 @@
 					"type": "int",
 					"required": true
 				}
+			},
+			"Inference": {
+				"command": {
+					"run_type": "python3"
+				},
+				"workspace":{
+					"name": "workspace",
+					"type":"workspace"
+				},
+				"execution_script": {
+					"name": "Execution Script",
+					"default": "/qvga_inference/qvga_inference_320x240.py",
+					"type": "file",
+					"required": true
+				},
+
+				"pb": {
+					"name": "Protobuf file for inference",
+					"type": "str",
+					"sub_type": "artefacts",
+					"selector": "training.train_dir",
+					"required": true
+				},
+				"input_path": {
+					"name": "Path to input Images",
+					"default": " ",
+					"type": "str",
+					"required": true
+				},
+				"output": {
+					"name": "Path to output folder",
+					"default": " ",
+					"type": "str",
+					"required": true
+				},
+				"mode": {
+					"name": "One of image/video/stream",
+					"default": "image",
+					"type": "str",
+					"required": true
+				},
+				"url": {
+					"name": "RTSP streamiing url",
+					"default": " ",
+					"type": "str",
+					"required": true
+				}
 			}
 		},
 
