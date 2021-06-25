@@ -10,7 +10,7 @@
 		"name" : "QVGA-SQUEEZEDET",
 		"format": "KITTI",
 		"image_url": "latticesemi/ml-training:tf-1.15.0",
-		"command" : "cd /; python3 /qvga_inference/qvga_inference_320x240.py --pb /qvga_inference/QVGA_trained_model.pb --input_images /lattice/dataset/#datasetname/ --mode image && pushd /lattice/dataset/#datasetname && mkdir training && mkdir training/labels/ && mkdir training/images && mkdir ImageSets && cp /inference_output/predictions/* training/labels/ && mv *.{png,jpg,jpeg} training/images/; ls training/images/ | grep '.jpg\\|.jpeg\\|.png' | sed -E 's/.jpg|.jpeg|.png//' > ImageSets/train.txt; popd"
+		"command" : "cd /; python3 /qvga_inference/qvga_inference_320x240.py --pb /qvga_inference/QVGA_trained_model.pb --input_images /lattice/dataset/#datasetname/ --mode image --save_dataset True && pushd /lattice/dataset/#datasetname && mkdir training && mkdir training/labels/ && mkdir training/images && mkdir ImageSets && cp /inference_output/predictions/* training/labels/ && mv *.{png,jpg,jpeg} training/images/; ls training/images/ | grep '.jpg\\|.jpeg\\|.png' | sed -E 's/.jpg|.jpeg|.png//' > ImageSets/train.txt; popd"
 	}
 
 	

@@ -638,28 +638,54 @@
 					"required": true
 				}
 			},
-			"Inference": {
+			"inference": {
+				"_comment": "optional",
 				"command": {
 					"run_type": "python3"
+				},
+				"execution_script": {
+					"name": "Execution Script",
+					"default": "/qvga_inference/stream_inference_qvga.py",
+					"type": "file",
+					"required": true
 				},
 				"workspace":{
 					"name": "workspace",
 					"type":"workspace"
 				},
-				"execution_script": {
-					"name": "Execution Script",
-					"default": "/qvga_inference/qvga_inference_320x240.py",
+				"pb": {
+					"name": "Tensorflow Model File",
 					"type": "file",
+					"extenstions": "h5",
 					"required": true
 				},
+				"input_path": {
+					"type": "dir",
+					"sub_type":"artefacts",
+					"required": true
 
-				"pb": {
-					"name": "Protobuf file for inference",
+				},
+				"mode": {
 					"type": "str",
-					"sub_type": "artefacts",
-					"selector": "training.train_dir",
+					"default": "images",
+					"required": true
+				},
+				"output": {
+					"type": "dir",
+					"sub_type":"artefacts",
+					"required": true
+				},
+				"url": {
+					"type": "str",
+					"default": "",
+					"required": true
+				},
+				"duration": {
+					"type": "str",
+					"default": "60",
 					"required": true
 				}
+
 			}
 		},
 
@@ -2330,7 +2356,6 @@
 			"map_calculation" : {
 				"gpu_option" : false,
                 "metrics_option" : true,
-
 				"command": {
 					"run_type": "python3"
 				},
