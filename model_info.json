@@ -604,7 +604,7 @@
 				"usecov3": {
 					"name": "usecov3",
 					"type": "flag",
-                    "default": true
+                    "default": false
 
 				},
 
