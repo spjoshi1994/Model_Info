@@ -601,13 +601,6 @@
 
 				},
 
-				"usecov3": {
-					"name": "usecov3",
-					"type": "flag",
-                    "default": false
-
-				},
-
 				"transfer_learning": {
 					"name": "Transfer Learning",
 					"type": "dropdown",
