@@ -20,5 +20,17 @@
 			"command" : "python3 /scripts/tfrecord-gen.py -i /lattice/dataset/#datasetname -o temp && rm -rf /lattice/dataset/#datasetname/* && mv temp/* /lattice/dataset/#datasetname/",
 			"image_url": "latticesemi/ml-training:tf-1.15.0"
 		}
+	},
+
+	"other" : {
+		"kitti" : {
+			"command" : "python3 /raw2kittivoc.py --dataset_dir /lattice/dataset/#datasetname/ --dataset_type kitti",
+			"image_url": "latticesemi/ubuntu:latest"
+		},
+		"voc" : {
+			"command" : "python3 /raw2kittivoc.py --dataset_dir /lattice/dataset/#datasetname/ --dataset_type voc",
+			"image_url": "latticesemi/ubuntu:latest"
+		}
 	}
+	
 }
