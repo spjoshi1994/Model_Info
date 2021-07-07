@@ -48,7 +48,7 @@
 			"target_network": "SqueezeDet",
 			"target_framework": "TensorFlow",
 			"target_framework_version": "1.14.0",
-			"sensAI_version": "['V3.1']",
+			"sensAI_version": "['V4.0']",
 			"dataset_type": "KITTI",
 			"other_param": ""
 		},
@@ -123,17 +123,6 @@
 					"default": "0",
 					"type": "int",
 					"required": true
-				},
-				"transfer_learning": {
-					"name": "Transfer Learning",
-					"type": "dropdown",
-					"required": false,
-					"options": {
-						"Lattice Github": "git_hub",
-						"Local": "local",
-						"From other Job": "other_job"
-					},
-					"url": ""
 				},
 				"freeze_layers" : {
 					"name": "Freeze Layers",
@@ -213,7 +202,7 @@
 			"target_network": "SqueezeDet",
 			"target_framework": "TensorFlow",
 			"target_framework_version": "1.14.0",
-			"sensAI_version": "['V3.1']",
+			"sensAI_version": "['V4.0']",
 			"dataset_type": "KITTI",
 			"other_param": ""
 		},
@@ -288,17 +277,6 @@
 					"default": "0",
 					"type": "int",
 					"required": true
-				},
-				"transfer_learning": {
-					"name": "Transfer Learning",
-					"type": "dropdown",
-					"required": false,
-					"options": {
-						"Lattice Github": "git_hub",
-						"Local": "local",
-						"From other Job": "other_job"
-					},
-					"url": ""
 				},
 				"freeze_layers" : {
 					"name": "Freeze Layers",
