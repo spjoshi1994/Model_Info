@@ -2930,6 +2930,7 @@
 					"name": "Dataset Path",
 					"type": "dir",
 					"sub_type": "dataset",
+					"multiple":true,
 					"required": true
 				},
 				"train_dir": {
