@@ -3042,7 +3042,8 @@
 			"scale": 0.0078125,
 			"hyperram": "checked",
 			"dual_core": "checked",
-			"required_output_depth_range": "7-41"
+			"required_output_depth_range": "7-41",
+			"usb_debug":true
 		}
 	},
 	{
