@@ -3412,7 +3412,7 @@
 					"required": true
 				},
 				"is_gray": {
-					"name": "Image Set",
+					"name": "grayscale",
 					"default": "True",
 					"type": "str",
 					"required": true
