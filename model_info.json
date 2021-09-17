@@ -3371,5 +3371,66 @@
 			"dual_core": "checked",
 			"required_output_depth_range": "7-41"
 		}
+	},
+	{
+		"model_name": "Classification AutoKeras Model",
+		"git_url": "https://github.com/LatticeSemi/Human-Count.git -b Crosslink-NX-AutoKeras",
+		"model_spec": {
+			"target_device": "Crosslink-NX",
+			"target_application": "Classification",
+			"target_class": "CNN",
+			"input_dim": "32x32",
+			"target_network": "autokeras",
+			"target_framework": "TensorFlow",
+			"target_framework_version": "2.3.0-autokeras",
+			"sensAI_version": "['V4.0']",
+			"dataset_type": "classification",
+			"other_param": ""
+		},
+		"sections": {
+			"training": {
+				"_comment": "Optional parameter: This determines that whether train section is available or not.",
+				"command": {
+					"run_type": "python3"
+				},
+				"execution_script": {
+					"name": "Execution Script",
+					"default": "ak_training.py",
+					"type": "file",
+					"required": true
+				},
+				"dataset_path": {
+					"name": "Dataset Path",
+					"type": "dir",
+					"sub_type": "dataset",
+					"required": true
+				},
+				"logdir": {
+					"name": "Checkpoint Path",
+					"type": "dir",
+					"sub_type": "checkpoint",
+					"required": true
+				},
+				"is_gray": {
+					"name": "Image Set",
+					"default": "True",
+					"type": "str",
+					"required": true
+				},
+				"gpu": {
+					"name": "Visible GPUs",
+					"default": "0",
+					"type": "int",
+					"required": true
+				}
+			}
+		},
+		"SensAI": {
+			"device": "CrossLink-NX",
+			"scale": 0.0078125,
+			"hyperram": "checked",
+			"dual_core": "checked",
+			"required_output_depth_range": "7-41"
+		}
 	}
 ]
