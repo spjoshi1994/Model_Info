@@ -3382,7 +3382,7 @@
 			"input_dim": "32x32",
 			"target_network": "autokeras",
 			"target_framework": "TensorFlow",
-			"target_framework_version": "2.3.0-autokeras",
+			"target_framework_version": "2.3.0_autokeras",
 			"sensAI_version": "['V4.0']",
 			"dataset_type": "classification",
 			"other_param": ""
