@@ -2933,6 +2933,18 @@
 					"multiple":true,
 					"required": true
 				},
+				"bucket_name": {
+					"name": "Bucket Name",
+					"default":"",
+					"type": "str",
+					"required": false
+				},
+				"bucket_data_path": {
+					"name": "Bucket Dataset Path",
+					"default":"",
+					"type": "str",
+					"required": false
+				},
 				"train_dir": {
 					"name": "Checkpoint Path",
 					"type": "dir",
