@@ -2930,7 +2930,7 @@
 					"name": "Dataset Path",
 					"type": "dir",
 					"sub_type": "dataset",
-					"multiple":true,
+					"multiple":false,
 					"required": true
 				},
 				"bucket_name": {
