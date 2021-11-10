@@ -227,7 +227,7 @@
 			"dual_core": "checked",
 			"required_output_depth_range": "7-41"
 		}
-	}
+	},
 	{
 		"model_name": "Human Count Crosslink-NX-GoogleNet",
 		"git_url": "https://github.com/LatticeSemi/Human-Count.git -b Crosslink-NX-GoogleNet",
