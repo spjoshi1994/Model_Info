@@ -3638,7 +3638,7 @@
 	},
 	{
 		"model_name": "FaceId Model",
-		"git_url": "https://github.com/LatticeSemi/Human-Count.git -b Crosslink-NX-FACEID",
+		"git_url": "https://github.com/LatticeSemi/Human-Count.git -b Crosslink-NX-FACE-ID",
 		"model_spec": {
 			"target_device": "Crosslink-NX",
 			"target_application": "Classification",
