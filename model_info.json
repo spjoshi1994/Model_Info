@@ -3635,5 +3635,102 @@
 			"dual_core": "checked",
 			"required_output_depth_range": "7-41"
 		}
+	},
+	{
+		"model_name": "FaceId Model",
+		"git_url": "https://github.com/LatticeSemi/Human-Count.git -b Crosslink-NX-FACEID",
+		"model_spec": {
+			"target_device": "Crosslink-NX",
+			"target_application": "Classification",
+			"target_class": "CNN",
+			"input_dim": "112x112",
+			"target_network": "faceid",
+			"target_framework": "TensorFlow",
+			"target_framework_version": "2.1.0",
+			"sensAI_version": "['V4.0']",
+			"dataset_type": "classification",
+			"other_param": ""
+		},
+		"sections": {
+			"training": {
+				"_comment": "Optional parameter: This determines that whether train section is available or not.",
+				"command": {
+					"run_type": "python3"
+				},
+				"execution_script": {
+					"name": "Execution Script",
+					"default": "train.py",
+					"type": "file",
+					"required": true
+				},
+				"dataset_path": {
+					"name": "Dataset Path",
+					"type": "dir",
+					"sub_type": "dataset",
+					"required": true
+				},
+				"logdir": {
+					"name": "Checkpoint Path",
+					"type": "dir",
+					"sub_type": "checkpoint",
+					"required": true
+				},
+				"gpu": {
+					"name": "Visible GPUs",
+					"default": "0",
+					"type": "int",
+					"required": true
+				},
+				"num_features": {
+					"name": "Number of embedding features",
+					"default": "256",
+					"type": "int",
+					"required": true
+				},
+				"epochs": {
+					"name": "Number of epochs to train",
+					"default": "300",
+					"type": "int",
+					"required": true
+				},
+				"batch_size": {
+					"name": "Batch Size for training",
+					"default": "256",
+					"type": "int",
+					"required": true
+				},
+				"validation_split": {
+					"name": "Percentage of validation data",
+					"default": "20",
+					"type": "int",
+					"required": true
+				}
+			},
+			"tensorboard": {
+				"_comment": "optional",
+				"command": {
+					"run_type": "tensorboard"
+				},
+				"logdir": {
+					"name": "Eventfile Path",
+					"type": "dir",
+					"sub_type": "artefacts",
+					"required": true
+				},
+				"port": {
+					"name": "Tensorboard Port",
+					"default": "6006",
+					"type": "int",
+					"required": true
+				}
+			}
+		},
+		"SensAI": {
+			"device": "CrossLink-NX",
+			"scale": 0.0078125,
+			"hyperram": "checked",
+			"dual_core": "checked",
+			"required_output_depth_range": "7-41"
+		}
 	}
 ]
