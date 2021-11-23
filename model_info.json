@@ -48,7 +48,7 @@
 			"target_network": "SqueezeDet",
 			"target_framework": "TensorFlow",
 			"target_framework_version": "1.14.0",
-			"sensAI_version": "['V4.0']",
+			"sensAI_version": "['V4.1']",
 			"dataset_type": "KITTI",
 			"other_param": ""
 		},
@@ -3647,7 +3647,7 @@
 			"target_network": "faceid",
 			"target_framework": "TensorFlow",
 			"target_framework_version": "2.1.0",
-			"sensAI_version": "['V4.0']",
+			"sensAI_version": "['V4.1']",
 			"dataset_type": "classification",
 			"other_param": ""
 		},
