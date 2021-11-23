@@ -3731,14 +3731,14 @@
 				},
 				"execution_script": {
 					"name": "Execution Script",
-					"default": "keras-to-tf-converter/genpb.py",
+					"default": "keras-to-tf-converter/keras2tf.py",
 					"type": "file",
 					"required": true
 				},
 				"kerasmodel": {
-					"name": "Keras Model File",
-					"type": "file",
-					"extenstions": "h5",
+					"name": "Checkpoint Path",
+					"type": "dir",
+					"sub_type": "artefacts",
 					"required": true
 				}
 			}
