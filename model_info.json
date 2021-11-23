@@ -3121,7 +3121,7 @@
 					"name": "Dataset Path",
 					"type": "dir",
 					"sub_type": "dataset",
-					"multiple":false,
+					"multiple":true,
 					"required": true
 				},
 				"bucket_name": {
