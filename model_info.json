@@ -166,7 +166,7 @@
 				"pb": {
 					"name": "Tensorflow Model File",
 					"type": "file",
-					"extenstions": "h5",
+					"extenstions": "pb",
 					"required": true
 				},
 				"input_images": {
@@ -3721,6 +3721,24 @@
 					"name": "Tensorboard Port",
 					"default": "6006",
 					"type": "int",
+					"required": true
+				}
+			},
+			"freeze": {
+				"_comment": " Optional parameter: This determines that whether freeze part is available or not.",
+				"command": {
+					"run_type": "python3"
+				},
+				"execution_script": {
+					"name": "Execution Script",
+					"default": "keras-to-tf-converter/genpb.py",
+					"type": "file",
+					"required": true
+				},
+				"kerasmodel": {
+					"name": "Keras Model File",
+					"type": "file",
+					"extenstions": "h5",
 					"required": true
 				}
 			}
