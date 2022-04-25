@@ -116,7 +116,10 @@
             "Crosslink NX Compact":{
                 "ip":{
                     "name":"ip_mode",
-                    "type":"str",
+                    "type":"dropdown",
+                    "options":{
+                        "Compact_CNN":"Compact_CNN"
+                        },
                     "default":"Compact_CNN",
                     "version":["v5.0"]
                     },
@@ -254,7 +257,10 @@
             "Certus-Pro NX Extended":{
                     "ip":{
                     "name":"ip_mode",
-                    "type":"str",
+                    "type":"dropdown",
+                    "options":{
+                        "Extended_CNN":"Extended_CNN"
+                        },
                     "default":"Extended_CNN",
                     "version":["v5.0"]
                 },
@@ -381,7 +387,10 @@
             "Certus-Pro NX Compact":{
                     "ip":{
                     "name":"ip_mode",
-                    "type":"str",
+                    "type":"dropdown",
+                    "options":{
+                        "Compact_CNN":"Compact_CNN"
+                        },
                     "default":"Compact_CNN",
                     "version":["v5.0"]
                 },
@@ -509,7 +518,10 @@
             "Certus-Pro NX Optimized":{
                 "ip":{
                     "name":"ip_mode",
-                    "type":"str",
+                    "type":"dropdown",
+                    "options":{
+                        "Optimized_CNN":"Optimized_CNN"
+                        },
                     "default":"Optimized_CNN",
                     "version":["v5.0"]
                 },
@@ -753,7 +765,10 @@
             "CrossLink NX Optimized":{
                 "ip":{
                     "name":"ip_mode",
-                    "type":"str",
+                    "type":"dropdown",
+                    "options":{
+                        "Optimized_CNN":"Optimized_CNN"
+                        },
                     "default":"Optimized_CNN",
                     "version":["v5.0"]
                     },
