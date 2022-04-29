@@ -113,6 +113,7 @@
                 "Certus-Pro NX Compact":"Certus-Pro NX"
             },
             "default":"Certus-Pro NX Extended",
+            
             "Crosslink NX Compact":{
                 "ip":{
                     "name":"ip_mode",
@@ -123,6 +124,17 @@
                     "default":"Compact_CNN",
                     "version":["v5.0"]
                     },
+                    "enable_debug_mode":{   
+                        "name":"Encryption flow",
+                        "type":"checkbox",
+                        "options":{
+                            "unchecked":0,
+                            "checked":1
+                        },
+                        "default":"unchecked",
+                        "version":["v5.0"]
+                    },
+                    
                 "conv1x1_mode":{
                         "name":"conv1x1 mode",
                         "type":"dropdown",
@@ -264,6 +276,16 @@
                     "default":"Extended_CNN",
                     "version":["v5.0"]
                 },
+                    "enable_debug_mode":{
+                        "name":"Encryption flow",
+                        "type":"checkbox",
+                        "options":{
+                            "unchecked":0,
+                            "checked":1
+                        },
+                        "default":"unchecked",
+                        "version":["v5.0"]
+                    },
                     "arg_max":{
                         "name":"ARGS Max Size",
                         "type":"dropdown",
@@ -394,6 +416,16 @@
                     "default":"Compact_CNN",
                     "version":["v5.0"]
                 },
+                    "enable_debug_mode":{
+                        "name":"Encryption flow",
+                        "type":"checkbox",
+                        "options":{
+                            "unchecked":0,
+                            "checked":1
+                        },
+                        "default":"unchecked",
+                        "version":["v5.0"]
+                    },
                     "conv1x1_mode":{
                         "name":"conv1x1 mode",
                         "type":"dropdown",
@@ -525,6 +557,16 @@
                     "default":"Optimized_CNN",
                     "version":["v5.0"]
                 },
+                    "enable_debug_mode":{
+                        "name":"Encryption flow",
+                        "type":"checkbox",
+                        "options":{
+                            "unchecked":0,
+                            "checked":1
+                        },
+                        "default":"unchecked",
+                        "version":["v5.0"]
+                    },
                     "crosslink_scratch_pad_blk_size":{
                         "name":"Scratch Pad Memory Block Size",
                         "type":"dropdown",
@@ -771,6 +813,16 @@
                         },
                     "default":"Optimized_CNN",
                     "version":["v5.0"]
+                    },
+                    "enable_debug_mode":{
+                        "name":"Encryption flow",
+                        "type":"checkbox",
+                        "options":{
+                            "unchecked":0,
+                            "checked":1
+                        },
+                        "default":"unchecked",
+                        "version":["v5.0"]
                     },
                 "crosslink_scratch_pad_blk_size":{
                     "name":"Scratch Pad Memory Block Size",
